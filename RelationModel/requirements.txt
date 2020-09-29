@@ -1,0 +1,13 @@
+pandas~=1.0.3
+joblib~=0.14.1
+
+numpy~=1.18.4
+
+sklearn~=0.0
+scikit-learn~=0.22.2.post1
+nltk~=3.5
+
+simplerepresentations~=0.0.4
+simpletransformers~=0.27.1
+transformers==2.10.0
+torchvision

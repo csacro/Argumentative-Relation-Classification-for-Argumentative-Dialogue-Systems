@@ -1,0 +1,52 @@
+2020-09-02 09:45:04,605 - INFO - main_rulebased.py - <module> - Length: 100
+2020-09-02 09:45:04,725 - INFO - main_rulebased.py - <module> - -------------------------------------
+2020-09-02 09:45:04,725 - INFO - main_rulebased.py - <module> - 
+Alice: nuclear energy is good
+
+Bob: As with other types of energy, nuclear energy also has a few major drawbacks.
+
+Alice: I can't agree with that. Nuclear energy has a very good safety record and hundreds of nuclear power plants all over the world have operated for more than fifty years without any serious accidents.
+
+Bob: The most recent disaster has convinced the Germans that nuclear power is dangerous and has begun shutting down all of their nuclear power plants (Power ranges, 2012).
+
+Alice: Could you be more specific?
+
+Bob: I would like to go back to the beginning when you claimed: nuclear energy is good I'm still not convinced. The second reason is reactors accidents and the threat of weapons proliferation easily occurs.
+
+Alice: Could you please elaborate?
+
+Bob: I would like to go back to the beginning when you claimed: nuclear energy is good I'm still not convinced. In addition many people are not very familiar with the advantages of nuclear power and thus are suspicious of it.
+
+Alice: That's not a valid point. Many people in the US and all over the world live nuclear power plants without any problems.
+
+Bob: I'm not sure I understand what you're getting at.
+
+Alice: Well, maybe we can come back to this point later. You said earlier: In addition many people are not very familiar with the advantages of nuclear power and thus are suspicious of it. But I think: I think this activity help reduce the fear of nuclear power by increasing the students knowledge and understanding.
+
+Bob: Could you please elaborate?
+
+Alice: You said earlier: In addition many people are not very familiar with the advantages of nuclear power and thus are suspicious of it. Could you be more specific?
+
+Bob: I would like to go back to the beginning when you claimed: nuclear energy is good I'm still not convinced. I feel this form of energy is not a very good source of energy.
+
+Alice: Could you be more specific?
+
+Bob: The public tend to have a negative view of that source of energy.
+
+Alice: Could you be more specific?
+
+Bob: I would like to go back to the beginning when you claimed: nuclear energy is good Why do you think that?
+
+Alice: These next-generation reactors will power scores of businesses and homes -1.6 million in Georgia alone - and it will do so affordably and reliably.
+
+Bob: Could you be more specific?
+
+Alice: Georgia residents whose power comes from the new reactors could realize up to $20 in savings on each utility bill by 2034.
+
+Bob: Could you please elaborate?
+
+Alice: I think I was wrong there.
+
+Alice: You were not convinced earlier when I said: nuclear energy is good I retract that statement. Let's assume I never said that.
+
+2020-09-02 09:45:04,731 - INFO - main_rulebased.py - <module> - -------------------------------------

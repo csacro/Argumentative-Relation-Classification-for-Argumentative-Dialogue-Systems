@@ -1,0 +1,14 @@
+©2020 Carolin Schindler
+This work is licensed under the CC BY-NC-ND 4.0 (Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International) License.
+To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0
+Please cite my thesis when you use any of the material.
+	@mastersthesis{Schindler_ArgumentativeRelationClassification,
+		type = {Bachelor's thesis},
+		title = {Argumentative Relation Classification for Argumentative Dialogue Systems},
+		author = {Carolin Schindler},
+		year = {2020},
+		school = {Institute of Communications Engineering, University of Ulm}
+	}
+
+Thanks to Niklas Rach for providing the Individual class in ontology.py and the Definitions.owl file.
+Please note that the The MyDataset_balanced.csv is a selected subset of the corpus provided by Lucas Carstens and Fransesca Toni in their work "Towards relation based argumentation mining".

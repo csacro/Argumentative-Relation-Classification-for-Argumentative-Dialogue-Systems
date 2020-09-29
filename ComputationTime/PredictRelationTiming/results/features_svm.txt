@@ -1,0 +1,2080 @@
+2020-08-27 19:37:26,026 - INFO - run.py - main - Namespace(MajorClaim='nuclear energy is good', bilp=False, classify=None, cluster=None, search=31, svm=True)
+2020-08-27 19:37:26,026 - INFO - argumentext.py - query_search_api - querying search api
+2020-08-27 19:37:26,026 - DEBUG - argumentext.py - query_search_api - {'topic': 'nuclear energy is good', 'index': 'cc', 'sortBy': 'none', 'numDocs': 20, 'userID': 'userID', 'apiKey': 'apiKey', 'strictTopicSearch': False, 'model': 'default', 'predictStance': True, 'computeAttention': False, 'showOnlyArguments': True, 'removeDuplicates': True, 'filterNonsensicalEntries': True}
+2020-08-27 19:37:26,029 - DEBUG - connectionpool.py - _new_conn - Starting new HTTPS connection (1): api.argumentsearch.com:443
+2020-08-27 19:37:33,291 - DEBUG - connectionpool.py - _make_request - https://api.argumentsearch.com:443 "POST /en/search HTTP/1.1" 200 30479
+2020-08-27 19:37:33,313 - DEBUG - argumentext.py - query_search_api - {'beginDate': None, 'computeAttention': False, 'endDate': None, 'filterNonsensicalEntries': True, 'language': 'en', 'modelVersion': 0.1, 'numDocs': 18, 'predictStance': True, 'removeDuplicates': True, 'showOnlyArguments': True, 'sortBy': 'none', 'timeArgumentPrediction': 5.961624383926392, 'timeAttentionComputation': -1, 'timeIndexing': 0.9763033390045166, 'timeLogging': 0.05767655372619629, 'timePreprocessing': 0.012392044067382812, 'timeStancePrediction': -1, 'timeTotal': 7.132006406784058, 'topic': 'nuclear energy is good', 'totalArguments': 334, 'totalClassifiedSentences': 532, 'totalContraArguments': 56, 'totalNonArguments': 198, 'totalProArguments': 278, 'userMetadata': ''}
+2020-08-27 19:37:33,314 - INFO - relation.py - generate_relation_matrix - generating relation matrix
+2020-08-27 19:37:33,314 - INFO - relation.py - generate_relation_matrix - using sklearn SVM
+2020-08-27 19:37:33,316 - DEBUG - connectionpool.py - _new_conn - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2020-08-27 19:37:36,436 - DEBUG - connectionpool.py - _make_request - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/bert-base-uncased-config.json HTTP/1.1" 200 0
+2020-08-27 19:37:36,440 - INFO - configuration_utils.py - get_config_dict - loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-config.json from cache at /home/famschi/.cache/torch/transformers/4dad0251492946e18ac39290fcfe91b89d370fee250efe9521476438fe8ca185.7156163d5fdc189c3016baca0775ffce230789d7fa2a42ef516483e4ca884517
+2020-08-27 19:37:36,440 - INFO - configuration_utils.py - from_dict - Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "output_hidden_states": true,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+2020-08-27 19:37:36,443 - DEBUG - connectionpool.py - _new_conn - Starting new HTTPS connection (1): cdn.huggingface.co:443
+2020-08-27 19:37:36,558 - DEBUG - connectionpool.py - _make_request - https://cdn.huggingface.co:443 "HEAD /bert-base-uncased-pytorch_model.bin HTTP/1.1" 200 0
+2020-08-27 19:37:36,560 - INFO - modeling_utils.py - from_pretrained - loading weights file https://cdn.huggingface.co/bert-base-uncased-pytorch_model.bin from cache at /home/famschi/.cache/torch/transformers/f2ee78bdd635b758cc0a12352586868bef80e47401abe4c4fcc3832421e7338b.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9a157
+2020-08-27 19:37:40,662 - DEBUG - connectionpool.py - _new_conn - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2020-08-27 19:37:41,069 - DEBUG - connectionpool.py - _make_request - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/bert-base-uncased-vocab.txt HTTP/1.1" 200 0
+2020-08-27 19:37:41,072 - INFO - tokenization_utils.py - _from_pretrained - loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/famschi/.cache/torch/transformers/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+2020-08-27 19:37:41,130 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->0
+2020-08-27 19:37:43,252 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.98504083]
+2020-08-27 19:37:43,252 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->2
+2020-08-27 19:37:44,978 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.65878103]
+2020-08-27 19:37:44,978 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->3
+2020-08-27 19:37:46,714 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.01685544]
+2020-08-27 19:37:46,715 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->4
+2020-08-27 19:37:48,439 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.32062715]
+2020-08-27 19:37:48,439 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->5
+2020-08-27 19:37:50,178 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5440236]
+2020-08-27 19:37:50,178 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->6
+2020-08-27 19:37:51,930 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.62070287]
+2020-08-27 19:37:51,931 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->7
+2020-08-27 19:37:53,796 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.24176174]
+2020-08-27 19:37:53,797 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->8
+2020-08-27 19:37:55,634 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.91829846]
+2020-08-27 19:37:55,635 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->9
+2020-08-27 19:37:57,549 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.14731085]
+2020-08-27 19:37:57,549 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->10
+2020-08-27 19:37:59,448 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.41648903]
+2020-08-27 19:37:59,448 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->11
+2020-08-27 19:38:01,559 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.91838763]
+2020-08-27 19:38:01,559 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->12
+2020-08-27 19:38:03,275 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.77425147]
+2020-08-27 19:38:03,276 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->13
+2020-08-27 19:38:05,003 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.40868952]
+2020-08-27 19:38:05,003 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->14
+2020-08-27 19:38:06,719 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.52272988]
+2020-08-27 19:38:06,720 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->15
+2020-08-27 19:38:08,540 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.72736829]
+2020-08-27 19:38:08,540 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->16
+2020-08-27 19:38:10,292 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.7434947]
+2020-08-27 19:38:10,292 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->17
+2020-08-27 19:38:12,007 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.70917708]
+2020-08-27 19:38:12,007 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->18
+2020-08-27 19:38:14,058 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.77229384]
+2020-08-27 19:38:14,059 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->19
+2020-08-27 19:38:15,917 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.73794011]
+2020-08-27 19:38:15,917 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->20
+2020-08-27 19:38:17,743 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.53722332]
+2020-08-27 19:38:17,743 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->21
+2020-08-27 19:38:19,475 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.11698011]
+2020-08-27 19:38:19,475 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->22
+2020-08-27 19:38:21,223 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.42965189]
+2020-08-27 19:38:21,223 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->23
+2020-08-27 19:38:22,949 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.14748556]
+2020-08-27 19:38:22,950 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->24
+2020-08-27 19:38:24,733 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.07603138]
+2020-08-27 19:38:24,734 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->25
+2020-08-27 19:38:26,605 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.74534701]
+2020-08-27 19:38:26,606 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->26
+2020-08-27 19:38:28,790 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.55990547]
+2020-08-27 19:38:28,791 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->27
+2020-08-27 19:38:30,630 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.22641662]
+2020-08-27 19:38:30,630 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->28
+2020-08-27 19:38:32,445 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.23729809]
+2020-08-27 19:38:32,446 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->29
+2020-08-27 19:38:34,271 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.78520519]
+2020-08-27 19:38:34,271 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->30
+2020-08-27 19:38:36,193 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.89997145]
+2020-08-27 19:38:36,193 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 1-->31
+2020-08-27 19:38:38,075 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.22987394]
+2020-08-27 19:38:38,076 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->0
+2020-08-27 19:38:40,035 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.89630515]
+2020-08-27 19:38:40,036 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->1
+2020-08-27 19:38:42,116 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.56571223]
+2020-08-27 19:38:42,117 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->3
+2020-08-27 19:38:44,107 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.3631893]
+2020-08-27 19:38:44,108 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->4
+2020-08-27 19:38:46,070 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.15523496]
+2020-08-27 19:38:46,071 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->5
+2020-08-27 19:38:48,114 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.78565759]
+2020-08-27 19:38:48,114 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->6
+2020-08-27 19:38:49,837 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.37384307]
+2020-08-27 19:38:49,837 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->7
+2020-08-27 19:38:51,680 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.97233628]
+2020-08-27 19:38:51,681 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->8
+2020-08-27 19:38:53,862 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.87795415]
+2020-08-27 19:38:53,862 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->9
+2020-08-27 19:38:55,802 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.17769842]
+2020-08-27 19:38:55,803 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->10
+2020-08-27 19:38:58,003 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.63390818]
+2020-08-27 19:38:58,003 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->11
+2020-08-27 19:39:00,175 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5833064]
+2020-08-27 19:39:00,175 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->12
+2020-08-27 19:39:02,139 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.55279357]
+2020-08-27 19:39:02,139 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->13
+2020-08-27 19:39:03,929 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.35710406]
+2020-08-27 19:39:03,929 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->14
+2020-08-27 19:39:06,151 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.50701478]
+2020-08-27 19:39:06,151 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->15
+2020-08-27 19:39:07,968 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5869703]
+2020-08-27 19:39:07,968 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->16
+2020-08-27 19:39:09,701 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.19979045]
+2020-08-27 19:39:09,702 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->17
+2020-08-27 19:39:11,729 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.65228604]
+2020-08-27 19:39:11,730 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->18
+2020-08-27 19:39:13,476 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.64417384]
+2020-08-27 19:39:13,477 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->19
+2020-08-27 19:39:15,596 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.57621054]
+2020-08-27 19:39:15,597 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->20
+2020-08-27 19:39:17,632 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.546679]
+2020-08-27 19:39:17,632 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->21
+2020-08-27 19:39:19,711 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.27512159]
+2020-08-27 19:39:19,712 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->22
+2020-08-27 19:39:21,702 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.76653168]
+2020-08-27 19:39:21,702 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->23
+2020-08-27 19:39:23,517 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.60373417]
+2020-08-27 19:39:23,517 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->24
+2020-08-27 19:39:25,361 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.4585619]
+2020-08-27 19:39:25,361 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->25
+2020-08-27 19:39:27,215 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.48783358]
+2020-08-27 19:39:27,215 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->26
+2020-08-27 19:39:28,996 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.53368214]
+2020-08-27 19:39:28,997 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->27
+2020-08-27 19:39:31,198 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.61527663]
+2020-08-27 19:39:31,198 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->28
+2020-08-27 19:39:33,156 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.31580577]
+2020-08-27 19:39:33,156 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->29
+2020-08-27 19:39:34,872 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.14003872]
+2020-08-27 19:39:34,873 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->30
+2020-08-27 19:39:36,647 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.18604991]
+2020-08-27 19:39:36,648 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 2-->31
+2020-08-27 19:39:38,376 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.75979315]
+2020-08-27 19:39:38,377 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->0
+2020-08-27 19:39:40,163 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.86278772]
+2020-08-27 19:39:40,164 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->1
+2020-08-27 19:39:42,179 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.05334118]
+2020-08-27 19:39:42,180 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->2
+2020-08-27 19:39:44,109 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.43624888]
+2020-08-27 19:39:44,110 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->4
+2020-08-27 19:39:45,890 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.27162586]
+2020-08-27 19:39:45,891 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->5
+2020-08-27 19:39:47,737 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.38900213]
+2020-08-27 19:39:47,738 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->6
+2020-08-27 19:39:49,878 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.54424277]
+2020-08-27 19:39:49,879 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->7
+2020-08-27 19:39:51,784 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.20136911]
+2020-08-27 19:39:51,785 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->8
+2020-08-27 19:39:53,700 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.82965515]
+2020-08-27 19:39:53,700 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->9
+2020-08-27 19:39:55,556 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.96890315]
+2020-08-27 19:39:55,557 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->10
+2020-08-27 19:39:57,726 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.32320588]
+2020-08-27 19:39:57,726 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->11
+2020-08-27 19:39:59,485 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.81703488]
+2020-08-27 19:39:59,485 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->12
+2020-08-27 19:40:01,222 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7410276]
+2020-08-27 19:40:01,222 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->13
+2020-08-27 19:40:03,002 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.15770825]
+2020-08-27 19:40:03,003 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->14
+2020-08-27 19:40:05,053 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.52380491]
+2020-08-27 19:40:05,054 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->15
+2020-08-27 19:40:07,186 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.58120505]
+2020-08-27 19:40:07,186 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->16
+2020-08-27 19:40:08,962 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.54105924]
+2020-08-27 19:40:08,962 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->17
+2020-08-27 19:40:10,739 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.64765232]
+2020-08-27 19:40:10,740 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->18
+2020-08-27 19:40:12,613 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.88810708]
+2020-08-27 19:40:12,614 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->19
+2020-08-27 19:40:14,585 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.58043549]
+2020-08-27 19:40:14,586 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->20
+2020-08-27 19:40:16,402 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.63929745]
+2020-08-27 19:40:16,402 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->21
+2020-08-27 19:40:18,186 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.76178032]
+2020-08-27 19:40:18,186 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->22
+2020-08-27 19:40:20,007 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.33542189]
+2020-08-27 19:40:20,007 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->23
+2020-08-27 19:40:21,803 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.16201998]
+2020-08-27 19:40:21,803 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->24
+2020-08-27 19:40:23,598 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.98244082]
+2020-08-27 19:40:23,599 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->25
+2020-08-27 19:40:25,316 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.6036118]
+2020-08-27 19:40:25,317 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->26
+2020-08-27 19:40:27,315 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.48457623]
+2020-08-27 19:40:27,316 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->27
+2020-08-27 19:40:29,103 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2724999]
+2020-08-27 19:40:29,103 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->28
+2020-08-27 19:40:30,812 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.30553646]
+2020-08-27 19:40:30,813 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->29
+2020-08-27 19:40:32,534 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.66515827]
+2020-08-27 19:40:32,535 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->30
+2020-08-27 19:40:34,315 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.85560088]
+2020-08-27 19:40:34,315 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 3-->31
+2020-08-27 19:40:36,011 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.25587831]
+2020-08-27 19:40:36,012 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->0
+2020-08-27 19:40:37,731 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5787368]
+2020-08-27 19:40:37,732 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->1
+2020-08-27 19:40:39,476 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.054498]
+2020-08-27 19:40:39,477 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->2
+2020-08-27 19:40:41,188 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.6414681]
+2020-08-27 19:40:41,189 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->3
+2020-08-27 19:40:42,929 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.72828691]
+2020-08-27 19:40:42,929 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->5
+2020-08-27 19:40:44,668 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.94359233]
+2020-08-27 19:40:44,669 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->6
+2020-08-27 19:40:46,472 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.28707679]
+2020-08-27 19:40:46,472 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->7
+2020-08-27 19:40:48,333 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.65913071]
+2020-08-27 19:40:48,333 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->8
+2020-08-27 19:40:50,478 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.62498092]
+2020-08-27 19:40:50,479 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->9
+2020-08-27 19:40:52,414 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.38525726]
+2020-08-27 19:40:52,414 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->10
+2020-08-27 19:40:54,428 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.01023471]
+2020-08-27 19:40:54,429 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->11
+2020-08-27 19:40:56,174 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.37673289]
+2020-08-27 19:40:56,174 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->12
+2020-08-27 19:40:57,980 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.7337178]
+2020-08-27 19:40:57,981 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->13
+2020-08-27 19:40:59,841 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.86540754]
+2020-08-27 19:40:59,841 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->14
+2020-08-27 19:41:01,597 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.08750641]
+2020-08-27 19:41:01,597 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->15
+2020-08-27 19:41:03,353 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.15498233]
+2020-08-27 19:41:03,353 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->16
+2020-08-27 19:41:05,078 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.78879996]
+2020-08-27 19:41:05,078 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->17
+2020-08-27 19:41:06,783 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.4916188]
+2020-08-27 19:41:06,784 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->18
+2020-08-27 19:41:08,511 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.94965298]
+2020-08-27 19:41:08,512 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->19
+2020-08-27 19:41:10,249 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.05647362]
+2020-08-27 19:41:10,249 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->20
+2020-08-27 19:41:12,069 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.36398068]
+2020-08-27 19:41:12,070 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->21
+2020-08-27 19:41:13,803 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.6804325]
+2020-08-27 19:41:13,804 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->22
+2020-08-27 19:41:15,533 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.97210275]
+2020-08-27 19:41:15,533 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->23
+2020-08-27 19:41:17,263 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.34110405]
+2020-08-27 19:41:17,263 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->24
+2020-08-27 19:41:19,054 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.99412177]
+2020-08-27 19:41:19,054 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->25
+2020-08-27 19:41:20,791 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.66048532]
+2020-08-27 19:41:20,791 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->26
+2020-08-27 19:41:22,519 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.19952166]
+2020-08-27 19:41:22,520 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->27
+2020-08-27 19:41:24,238 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.45103809]
+2020-08-27 19:41:24,239 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->28
+2020-08-27 19:41:25,951 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.76899627]
+2020-08-27 19:41:25,952 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->29
+2020-08-27 19:41:27,664 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.99441288]
+2020-08-27 19:41:27,664 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->30
+2020-08-27 19:41:29,403 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.32941812]
+2020-08-27 19:41:29,404 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 4-->31
+2020-08-27 19:41:31,147 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.53226839]
+2020-08-27 19:41:31,148 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->0
+2020-08-27 19:41:32,849 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.68436248]
+2020-08-27 19:41:32,850 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->1
+2020-08-27 19:41:34,556 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.42610987]
+2020-08-27 19:41:34,557 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->2
+2020-08-27 19:41:36,344 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.83025492]
+2020-08-27 19:41:36,344 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->3
+2020-08-27 19:41:38,042 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.13392037]
+2020-08-27 19:41:38,043 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->4
+2020-08-27 19:41:39,765 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.65601056]
+2020-08-27 19:41:39,765 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->6
+2020-08-27 19:41:41,475 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.52258561]
+2020-08-27 19:41:41,476 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->7
+2020-08-27 19:41:43,198 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.05191099]
+2020-08-27 19:41:43,199 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->8
+2020-08-27 19:41:44,898 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.9736908]
+2020-08-27 19:41:44,898 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->9
+2020-08-27 19:41:46,708 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.97481772]
+2020-08-27 19:41:46,709 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->10
+2020-08-27 19:41:48,445 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.47162339]
+2020-08-27 19:41:48,445 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->11
+2020-08-27 19:41:50,215 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.50442432]
+2020-08-27 19:41:50,216 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->12
+2020-08-27 19:41:51,947 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.26499365]
+2020-08-27 19:41:51,947 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->13
+2020-08-27 19:41:53,705 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.43397229]
+2020-08-27 19:41:53,705 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->14
+2020-08-27 19:41:55,435 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.36071854]
+2020-08-27 19:41:55,435 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->15
+2020-08-27 19:41:57,209 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.35193582]
+2020-08-27 19:41:57,209 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->16
+2020-08-27 19:41:58,943 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.5094783]
+2020-08-27 19:41:58,944 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->17
+2020-08-27 19:42:00,698 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.42783585]
+2020-08-27 19:42:00,698 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->18
+2020-08-27 19:42:02,433 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.31484179]
+2020-08-27 19:42:02,434 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->19
+2020-08-27 19:42:04,142 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.22204491]
+2020-08-27 19:42:04,143 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->20
+2020-08-27 19:42:05,899 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.46794181]
+2020-08-27 19:42:05,900 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->21
+2020-08-27 19:42:07,712 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.06708561]
+2020-08-27 19:42:07,713 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->22
+2020-08-27 19:42:09,458 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.44025892]
+2020-08-27 19:42:09,458 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->23
+2020-08-27 19:42:11,159 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.94200277]
+2020-08-27 19:42:11,160 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->24
+2020-08-27 19:42:12,901 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.73247195]
+2020-08-27 19:42:12,901 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->25
+2020-08-27 19:42:14,613 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.18512426]
+2020-08-27 19:42:14,614 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->26
+2020-08-27 19:42:16,334 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.76448037]
+2020-08-27 19:42:16,335 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->27
+2020-08-27 19:42:18,043 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.34951592]
+2020-08-27 19:42:18,043 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->28
+2020-08-27 19:42:19,806 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.22257183]
+2020-08-27 19:42:19,806 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->29
+2020-08-27 19:42:21,589 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.10374763]
+2020-08-27 19:42:21,590 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->30
+2020-08-27 19:42:23,301 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.13275297]
+2020-08-27 19:42:23,302 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 5-->31
+2020-08-27 19:42:25,042 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.78115187]
+2020-08-27 19:42:25,043 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->0
+2020-08-27 19:42:26,805 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.67963385]
+2020-08-27 19:42:26,806 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->1
+2020-08-27 19:42:28,573 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.65657719]
+2020-08-27 19:42:28,573 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->2
+2020-08-27 19:42:30,313 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.34424801]
+2020-08-27 19:42:30,314 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->3
+2020-08-27 19:42:32,033 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5069029]
+2020-08-27 19:42:32,033 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->4
+2020-08-27 19:42:33,775 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.9007735]
+2020-08-27 19:42:33,776 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->5
+2020-08-27 19:42:35,528 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.43148821]
+2020-08-27 19:42:35,529 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->7
+2020-08-27 19:42:37,234 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.40670781]
+2020-08-27 19:42:37,235 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->8
+2020-08-27 19:42:38,950 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.58733526]
+2020-08-27 19:42:38,951 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->9
+2020-08-27 19:42:40,701 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.16691068]
+2020-08-27 19:42:40,702 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->10
+2020-08-27 19:42:42,447 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.42469208]
+2020-08-27 19:42:42,448 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->11
+2020-08-27 19:42:44,157 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.70901417]
+2020-08-27 19:42:44,158 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->12
+2020-08-27 19:42:45,854 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.52566725]
+2020-08-27 19:42:45,854 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->13
+2020-08-27 19:42:47,644 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.04815799]
+2020-08-27 19:42:47,645 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->14
+2020-08-27 19:42:49,392 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.47759401]
+2020-08-27 19:42:49,393 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->15
+2020-08-27 19:42:51,187 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.32193058]
+2020-08-27 19:42:51,188 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->16
+2020-08-27 19:42:52,882 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.52971189]
+2020-08-27 19:42:52,882 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->17
+2020-08-27 19:42:54,589 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.63038369]
+2020-08-27 19:42:54,589 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->18
+2020-08-27 19:42:56,339 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.6215565]
+2020-08-27 19:42:56,339 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->19
+2020-08-27 19:42:58,054 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.60032183]
+2020-08-27 19:42:58,055 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->20
+2020-08-27 19:42:59,782 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.12440147]
+2020-08-27 19:42:59,783 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->21
+2020-08-27 19:43:01,515 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.37237924]
+2020-08-27 19:43:01,515 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->22
+2020-08-27 19:43:03,232 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.29535879]
+2020-08-27 19:43:03,233 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->23
+2020-08-27 19:43:04,969 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.34234354]
+2020-08-27 19:43:04,970 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->24
+2020-08-27 19:43:06,714 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.79439264]
+2020-08-27 19:43:06,715 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->25
+2020-08-27 19:43:08,439 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.55469387]
+2020-08-27 19:43:08,439 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->26
+2020-08-27 19:43:10,156 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.06662773]
+2020-08-27 19:43:10,156 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->27
+2020-08-27 19:43:11,909 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.66226377]
+2020-08-27 19:43:11,909 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->28
+2020-08-27 19:43:13,696 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.30254334]
+2020-08-27 19:43:13,696 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->29
+2020-08-27 19:43:15,437 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.35758186]
+2020-08-27 19:43:15,438 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->30
+2020-08-27 19:43:17,170 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.26341577]
+2020-08-27 19:43:17,170 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 6-->31
+2020-08-27 19:43:18,915 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.11941178]
+2020-08-27 19:43:18,916 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->0
+2020-08-27 19:43:20,678 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.60666152]
+2020-08-27 19:43:20,679 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->1
+2020-08-27 19:43:22,381 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.21345809]
+2020-08-27 19:43:22,381 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->2
+2020-08-27 19:43:24,093 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.01764231]
+2020-08-27 19:43:24,093 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->3
+2020-08-27 19:43:25,851 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.00881093]
+2020-08-27 19:43:25,852 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->4
+2020-08-27 19:43:27,572 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.52413457]
+2020-08-27 19:43:27,572 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->5
+2020-08-27 19:43:29,319 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.83051806]
+2020-08-27 19:43:29,319 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->6
+2020-08-27 19:43:31,074 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.30207518]
+2020-08-27 19:43:31,074 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->8
+2020-08-27 19:43:32,839 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.18537784]
+2020-08-27 19:43:32,840 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->9
+2020-08-27 19:43:34,598 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.36607182]
+2020-08-27 19:43:34,599 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->10
+2020-08-27 19:43:36,354 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.80816845]
+2020-08-27 19:43:36,355 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->11
+2020-08-27 19:43:38,092 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.43853025]
+2020-08-27 19:43:38,092 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->12
+2020-08-27 19:43:39,784 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.54147275]
+2020-08-27 19:43:39,784 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->13
+2020-08-27 19:43:41,535 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.05160237]
+2020-08-27 19:43:41,536 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->14
+2020-08-27 19:43:43,338 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.35779504]
+2020-08-27 19:43:43,339 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->15
+2020-08-27 19:43:45,140 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.28184351]
+2020-08-27 19:43:45,140 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->16
+2020-08-27 19:43:46,876 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.57201299]
+2020-08-27 19:43:46,876 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->17
+2020-08-27 19:43:48,590 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.59537765]
+2020-08-27 19:43:48,590 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->18
+2020-08-27 19:43:50,382 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.53868082]
+2020-08-27 19:43:50,382 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->19
+2020-08-27 19:43:52,178 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.73475378]
+2020-08-27 19:43:52,179 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->20
+2020-08-27 19:43:53,888 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.48233808]
+2020-08-27 19:43:53,888 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->21
+2020-08-27 19:43:55,773 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.18366426]
+2020-08-27 19:43:55,774 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->22
+2020-08-27 19:43:57,508 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.26710983]
+2020-08-27 19:43:57,509 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->23
+2020-08-27 19:43:59,233 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.1193381]
+2020-08-27 19:43:59,234 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->24
+2020-08-27 19:44:01,031 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.45475689]
+2020-08-27 19:44:01,031 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->25
+2020-08-27 19:44:02,782 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.72972166]
+2020-08-27 19:44:02,782 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->26
+2020-08-27 19:44:04,490 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.24810631]
+2020-08-27 19:44:04,491 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->27
+2020-08-27 19:44:06,225 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.79647531]
+2020-08-27 19:44:06,226 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->28
+2020-08-27 19:44:07,983 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.28359587]
+2020-08-27 19:44:07,983 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->29
+2020-08-27 19:44:09,704 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.19224738]
+2020-08-27 19:44:09,704 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->30
+2020-08-27 19:44:11,416 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.00326832]
+2020-08-27 19:44:11,416 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 7-->31
+2020-08-27 19:44:13,170 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.86240746]
+2020-08-27 19:44:13,171 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->0
+2020-08-27 19:44:14,942 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.00718395]
+2020-08-27 19:44:14,942 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->1
+2020-08-27 19:44:16,643 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.72818319]
+2020-08-27 19:44:16,644 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->2
+2020-08-27 19:44:18,364 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.70095288]
+2020-08-27 19:44:18,364 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->3
+2020-08-27 19:44:20,134 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.62218694]
+2020-08-27 19:44:20,135 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->4
+2020-08-27 19:44:21,882 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.14302396]
+2020-08-27 19:44:21,882 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->5
+2020-08-27 19:44:23,661 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.66431885]
+2020-08-27 19:44:23,662 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->6
+2020-08-27 19:44:25,364 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.51634319]
+2020-08-27 19:44:25,365 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->7
+2020-08-27 19:44:27,124 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.30012351]
+2020-08-27 19:44:27,125 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->9
+2020-08-27 19:44:28,843 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.03681311]
+2020-08-27 19:44:28,843 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->10
+2020-08-27 19:44:30,546 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.44151845]
+2020-08-27 19:44:30,546 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->11
+2020-08-27 19:44:32,290 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.86055451]
+2020-08-27 19:44:32,290 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->12
+2020-08-27 19:44:33,992 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.81491172]
+2020-08-27 19:44:33,993 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->13
+2020-08-27 19:44:35,715 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.20577096]
+2020-08-27 19:44:35,716 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->14
+2020-08-27 19:44:37,502 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.69543239]
+2020-08-27 19:44:37,503 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->15
+2020-08-27 19:44:39,237 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.75656108]
+2020-08-27 19:44:39,237 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->16
+2020-08-27 19:44:40,945 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.4790883]
+2020-08-27 19:44:40,945 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->17
+2020-08-27 19:44:42,688 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.91334187]
+2020-08-27 19:44:42,688 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->18
+2020-08-27 19:44:44,386 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.66188168]
+2020-08-27 19:44:44,387 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->19
+2020-08-27 19:44:46,096 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.71239049]
+2020-08-27 19:44:46,096 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->20
+2020-08-27 19:44:47,913 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.04997322]
+2020-08-27 19:44:47,913 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->21
+2020-08-27 19:44:49,658 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2689965]
+2020-08-27 19:44:49,659 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->22
+2020-08-27 19:44:51,402 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.49996714]
+2020-08-27 19:44:51,403 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->23
+2020-08-27 19:44:53,104 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.38475027]
+2020-08-27 19:44:53,104 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->24
+2020-08-27 19:44:54,812 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.97769237]
+2020-08-27 19:44:54,812 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->25
+2020-08-27 19:44:56,551 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.55270635]
+2020-08-27 19:44:56,552 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->26
+2020-08-27 19:44:58,311 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.94810927]
+2020-08-27 19:44:58,312 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->27
+2020-08-27 19:45:00,011 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.71820992]
+2020-08-27 19:45:00,012 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->28
+2020-08-27 19:45:01,741 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.0984696]
+2020-08-27 19:45:01,741 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->29
+2020-08-27 19:45:03,469 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.17529509]
+2020-08-27 19:45:03,469 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->30
+2020-08-27 19:45:05,175 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.40654661]
+2020-08-27 19:45:05,175 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 8-->31
+2020-08-27 19:45:06,954 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.17911168]
+2020-08-27 19:45:06,954 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->0
+2020-08-27 19:45:08,694 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.01461406]
+2020-08-27 19:45:08,695 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->1
+2020-08-27 19:45:10,421 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.9277234]
+2020-08-27 19:45:10,421 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->2
+2020-08-27 19:45:12,177 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.71602914]
+2020-08-27 19:45:12,177 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->3
+2020-08-27 19:45:13,881 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.79631978]
+2020-08-27 19:45:13,881 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->4
+2020-08-27 19:45:15,646 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.36332721]
+2020-08-27 19:45:15,647 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->5
+2020-08-27 19:45:17,380 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.0329404]
+2020-08-27 19:45:17,381 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->6
+2020-08-27 19:45:19,146 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.80378304]
+2020-08-27 19:45:19,146 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->7
+2020-08-27 19:45:20,878 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.47632278]
+2020-08-27 19:45:20,879 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->8
+2020-08-27 19:45:22,646 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.81873657]
+2020-08-27 19:45:22,646 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->10
+2020-08-27 19:45:24,444 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.84930834]
+2020-08-27 19:45:24,445 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->11
+2020-08-27 19:45:26,241 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.20489216]
+2020-08-27 19:45:26,242 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->12
+2020-08-27 19:45:27,968 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.71964641]
+2020-08-27 19:45:27,968 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->13
+2020-08-27 19:45:29,711 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.98291225]
+2020-08-27 19:45:29,712 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->14
+2020-08-27 19:45:31,493 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.41401038]
+2020-08-27 19:45:31,494 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->15
+2020-08-27 19:45:33,226 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.75970816]
+2020-08-27 19:45:33,227 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->16
+2020-08-27 19:45:34,974 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.39253418]
+2020-08-27 19:45:34,974 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->17
+2020-08-27 19:45:36,693 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.67669757]
+2020-08-27 19:45:36,693 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->18
+2020-08-27 19:45:38,432 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.10372002]
+2020-08-27 19:45:38,432 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->19
+2020-08-27 19:45:40,192 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.94277403]
+2020-08-27 19:45:40,192 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->20
+2020-08-27 19:45:41,947 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.64386927]
+2020-08-27 19:45:41,947 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->21
+2020-08-27 19:45:43,684 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-2.14926022]
+2020-08-27 19:45:43,684 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->22
+2020-08-27 19:45:45,467 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.92894606]
+2020-08-27 19:45:45,468 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->23
+2020-08-27 19:45:47,235 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.65352614]
+2020-08-27 19:45:47,236 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->24
+2020-08-27 19:45:49,013 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.07993189]
+2020-08-27 19:45:49,014 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->25
+2020-08-27 19:45:50,766 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.01352256]
+2020-08-27 19:45:50,766 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->26
+2020-08-27 19:45:52,517 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.03750715]
+2020-08-27 19:45:52,517 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->27
+2020-08-27 19:45:54,314 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.56699817]
+2020-08-27 19:45:54,315 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->28
+2020-08-27 19:45:56,051 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.23424249]
+2020-08-27 19:45:56,052 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->29
+2020-08-27 19:45:57,820 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.38688819]
+2020-08-27 19:45:57,821 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->30
+2020-08-27 19:45:59,543 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.28950505]
+2020-08-27 19:45:59,544 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 9-->31
+2020-08-27 19:46:01,254 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.34505665]
+2020-08-27 19:46:01,255 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->0
+2020-08-27 19:46:02,994 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.3548302]
+2020-08-27 19:46:02,994 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->1
+2020-08-27 19:46:04,709 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.26507226]
+2020-08-27 19:46:04,710 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->2
+2020-08-27 19:46:06,469 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.55712894]
+2020-08-27 19:46:06,470 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->3
+2020-08-27 19:46:08,225 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.17972802]
+2020-08-27 19:46:08,226 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->4
+2020-08-27 19:46:09,987 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.47319919]
+2020-08-27 19:46:09,987 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->5
+2020-08-27 19:46:11,783 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.49925689]
+2020-08-27 19:46:11,784 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->6
+2020-08-27 19:46:13,532 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.32803869]
+2020-08-27 19:46:13,533 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->7
+2020-08-27 19:46:15,286 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.35963985]
+2020-08-27 19:46:15,286 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->8
+2020-08-27 19:46:16,995 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.52916747]
+2020-08-27 19:46:16,995 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->9
+2020-08-27 19:46:18,735 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.41821658]
+2020-08-27 19:46:18,736 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->11
+2020-08-27 19:46:20,510 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.62240238]
+2020-08-27 19:46:20,511 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->12
+2020-08-27 19:46:22,244 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.23249043]
+2020-08-27 19:46:22,244 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->13
+2020-08-27 19:46:24,020 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.21731322]
+2020-08-27 19:46:24,020 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->14
+2020-08-27 19:46:25,775 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.23847124]
+2020-08-27 19:46:25,776 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->15
+2020-08-27 19:46:27,506 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.16527644]
+2020-08-27 19:46:27,506 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->16
+2020-08-27 19:46:29,222 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.46678173]
+2020-08-27 19:46:29,222 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->17
+2020-08-27 19:46:30,933 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.271439]
+2020-08-27 19:46:30,934 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->18
+2020-08-27 19:46:32,764 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.4551996]
+2020-08-27 19:46:32,764 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->19
+2020-08-27 19:46:34,528 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.4363965]
+2020-08-27 19:46:34,528 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->20
+2020-08-27 19:46:36,252 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.42507057]
+2020-08-27 19:46:36,253 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->21
+2020-08-27 19:46:37,983 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.91611758]
+2020-08-27 19:46:37,984 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->22
+2020-08-27 19:46:39,709 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7994857]
+2020-08-27 19:46:39,710 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->23
+2020-08-27 19:46:41,466 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.13515658]
+2020-08-27 19:46:41,466 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->24
+2020-08-27 19:46:43,212 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.29044937]
+2020-08-27 19:46:43,212 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->25
+2020-08-27 19:46:44,932 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.17655652]
+2020-08-27 19:46:44,932 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->26
+2020-08-27 19:46:46,645 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.57891151]
+2020-08-27 19:46:46,646 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->27
+2020-08-27 19:46:48,370 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.44013387]
+2020-08-27 19:46:48,370 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->28
+2020-08-27 19:46:50,114 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.56276436]
+2020-08-27 19:46:50,115 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->29
+2020-08-27 19:46:51,846 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.5601447]
+2020-08-27 19:46:51,847 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->30
+2020-08-27 19:46:53,612 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.97001198]
+2020-08-27 19:46:53,613 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 10-->31
+2020-08-27 19:46:55,375 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.76616961]
+2020-08-27 19:46:55,375 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->0
+2020-08-27 19:46:57,098 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.97622998]
+2020-08-27 19:46:57,099 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->1
+2020-08-27 19:46:58,812 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.00313078]
+2020-08-27 19:46:58,812 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->2
+2020-08-27 19:47:00,576 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.69062359]
+2020-08-27 19:47:00,577 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->3
+2020-08-27 19:47:02,300 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.96254825]
+2020-08-27 19:47:02,301 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->4
+2020-08-27 19:47:04,063 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.08366406]
+2020-08-27 19:47:04,063 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->5
+2020-08-27 19:47:05,776 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.76639922]
+2020-08-27 19:47:05,777 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->6
+2020-08-27 19:47:07,527 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.78057724]
+2020-08-27 19:47:07,527 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->7
+2020-08-27 19:47:09,257 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.65410474]
+2020-08-27 19:47:09,257 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->8
+2020-08-27 19:47:10,970 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.91271844]
+2020-08-27 19:47:10,970 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->9
+2020-08-27 19:47:12,705 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.1757618]
+2020-08-27 19:47:12,705 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->10
+2020-08-27 19:47:14,476 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.02100069]
+2020-08-27 19:47:14,476 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->12
+2020-08-27 19:47:16,183 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.9194905]
+2020-08-27 19:47:16,183 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->13
+2020-08-27 19:47:17,943 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2498661]
+2020-08-27 19:47:17,943 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->14
+2020-08-27 19:47:19,678 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.81263155]
+2020-08-27 19:47:19,678 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->15
+2020-08-27 19:47:21,399 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.92943149]
+2020-08-27 19:47:21,399 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->16
+2020-08-27 19:47:23,106 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.7144631]
+2020-08-27 19:47:23,106 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->17
+2020-08-27 19:47:24,867 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.07110901]
+2020-08-27 19:47:24,868 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->18
+2020-08-27 19:47:26,585 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.93319557]
+2020-08-27 19:47:26,585 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->19
+2020-08-27 19:47:28,314 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.01112683]
+2020-08-27 19:47:28,314 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->20
+2020-08-27 19:47:30,070 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.19073008]
+2020-08-27 19:47:30,071 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->21
+2020-08-27 19:47:31,841 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.34066909]
+2020-08-27 19:47:31,841 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->22
+2020-08-27 19:47:33,661 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.64384973]
+2020-08-27 19:47:33,662 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->23
+2020-08-27 19:47:35,476 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.51709042]
+2020-08-27 19:47:35,476 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->24
+2020-08-27 19:47:37,243 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.37932196]
+2020-08-27 19:47:37,244 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->25
+2020-08-27 19:47:38,990 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.24815797]
+2020-08-27 19:47:38,991 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->26
+2020-08-27 19:47:40,728 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.02151078]
+2020-08-27 19:47:40,728 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->27
+2020-08-27 19:47:42,496 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.47838245]
+2020-08-27 19:47:42,497 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->28
+2020-08-27 19:47:44,274 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.30102]
+2020-08-27 19:47:44,275 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->29
+2020-08-27 19:47:46,037 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.52503327]
+2020-08-27 19:47:46,037 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->30
+2020-08-27 19:47:47,817 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.08509963]
+2020-08-27 19:47:47,818 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 11-->31
+2020-08-27 19:47:49,531 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.03646975]
+2020-08-27 19:47:49,531 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->0
+2020-08-27 19:47:51,238 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.94433005]
+2020-08-27 19:47:51,239 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->1
+2020-08-27 19:47:52,979 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.804548]
+2020-08-27 19:47:52,980 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->2
+2020-08-27 19:47:54,691 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5403445]
+2020-08-27 19:47:54,691 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->3
+2020-08-27 19:47:56,460 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.8720499]
+2020-08-27 19:47:56,460 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->4
+2020-08-27 19:47:58,178 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.90619771]
+2020-08-27 19:47:58,179 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->5
+2020-08-27 19:47:59,928 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.24315877]
+2020-08-27 19:47:59,929 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->6
+2020-08-27 19:48:01,630 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.53060103]
+2020-08-27 19:48:01,631 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->7
+2020-08-27 19:48:03,399 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.75388897]
+2020-08-27 19:48:03,400 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->8
+2020-08-27 19:48:05,121 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.94891487]
+2020-08-27 19:48:05,122 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->9
+2020-08-27 19:48:06,887 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.01230793]
+2020-08-27 19:48:06,888 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->10
+2020-08-27 19:48:08,621 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.44506059]
+2020-08-27 19:48:08,621 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->11
+2020-08-27 19:48:10,389 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.56467696]
+2020-08-27 19:48:10,389 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->13
+2020-08-27 19:48:12,183 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.29916288]
+2020-08-27 19:48:12,183 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->14
+2020-08-27 19:48:13,950 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.81014058]
+2020-08-27 19:48:13,950 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->15
+2020-08-27 19:48:15,736 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.56789599]
+2020-08-27 19:48:15,737 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->16
+2020-08-27 19:48:17,444 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.50365019]
+2020-08-27 19:48:17,444 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->17
+2020-08-27 19:48:19,175 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.78830881]
+2020-08-27 19:48:19,176 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->18
+2020-08-27 19:48:20,911 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.82694104]
+2020-08-27 19:48:20,912 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->19
+2020-08-27 19:48:22,666 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.48446552]
+2020-08-27 19:48:22,666 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->20
+2020-08-27 19:48:24,500 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.7167579]
+2020-08-27 19:48:24,500 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->21
+2020-08-27 19:48:26,213 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.04031763]
+2020-08-27 19:48:26,214 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->22
+2020-08-27 19:48:27,951 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5013252]
+2020-08-27 19:48:27,952 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->23
+2020-08-27 19:48:29,726 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.29496648]
+2020-08-27 19:48:29,726 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->24
+2020-08-27 19:48:31,451 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.15192492]
+2020-08-27 19:48:31,452 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->25
+2020-08-27 19:48:33,234 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.03359909]
+2020-08-27 19:48:33,235 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->26
+2020-08-27 19:48:34,952 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.88453891]
+2020-08-27 19:48:34,952 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->27
+2020-08-27 19:48:36,724 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.47648526]
+2020-08-27 19:48:36,725 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->28
+2020-08-27 19:48:38,464 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.37885724]
+2020-08-27 19:48:38,465 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->29
+2020-08-27 19:48:40,172 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.12791994]
+2020-08-27 19:48:40,173 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->30
+2020-08-27 19:48:41,925 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.67496479]
+2020-08-27 19:48:41,925 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 12-->31
+2020-08-27 19:48:43,641 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.94736412]
+2020-08-27 19:48:43,641 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->0
+2020-08-27 19:48:45,391 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.32393546]
+2020-08-27 19:48:45,391 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->1
+2020-08-27 19:48:47,130 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.8999307]
+2020-08-27 19:48:47,131 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->2
+2020-08-27 19:48:48,883 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.09720057]
+2020-08-27 19:48:48,883 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->3
+2020-08-27 19:48:50,621 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.63287098]
+2020-08-27 19:48:50,621 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->4
+2020-08-27 19:48:52,390 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.64719501]
+2020-08-27 19:48:52,391 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->5
+2020-08-27 19:48:54,231 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.52981697]
+2020-08-27 19:48:54,231 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->6
+2020-08-27 19:48:55,970 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.92392434]
+2020-08-27 19:48:55,971 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->7
+2020-08-27 19:48:57,771 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.6810938]
+2020-08-27 19:48:57,771 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->8
+2020-08-27 19:48:59,490 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.319985]
+2020-08-27 19:48:59,491 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->9
+2020-08-27 19:49:01,246 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.86595052]
+2020-08-27 19:49:01,246 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->10
+2020-08-27 19:49:03,018 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.95440391]
+2020-08-27 19:49:03,018 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->11
+2020-08-27 19:49:04,776 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.67086251]
+2020-08-27 19:49:04,777 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->12
+2020-08-27 19:49:06,486 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.74083469]
+2020-08-27 19:49:06,486 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->14
+2020-08-27 19:49:08,238 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.09718307]
+2020-08-27 19:49:08,239 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->15
+2020-08-27 19:49:09,973 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.14312187]
+2020-08-27 19:49:09,973 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->16
+2020-08-27 19:49:11,719 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.64907046]
+2020-08-27 19:49:11,719 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->17
+2020-08-27 19:49:13,483 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.99230144]
+2020-08-27 19:49:13,483 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->18
+2020-08-27 19:49:15,206 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.25210892]
+2020-08-27 19:49:15,207 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->19
+2020-08-27 19:49:16,960 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.96083896]
+2020-08-27 19:49:16,961 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->20
+2020-08-27 19:49:18,730 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.53612703]
+2020-08-27 19:49:18,731 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->21
+2020-08-27 19:49:20,475 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.06306509]
+2020-08-27 19:49:20,475 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->22
+2020-08-27 19:49:22,218 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.11536455]
+2020-08-27 19:49:22,218 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->23
+2020-08-27 19:49:23,976 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.22516123]
+2020-08-27 19:49:23,976 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->24
+2020-08-27 19:49:25,721 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.97959446]
+2020-08-27 19:49:25,722 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->25
+2020-08-27 19:49:27,487 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.17288145]
+2020-08-27 19:49:27,487 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->26
+2020-08-27 19:49:29,273 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.25699733]
+2020-08-27 19:49:29,273 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->27
+2020-08-27 19:49:31,096 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.83290732]
+2020-08-27 19:49:31,096 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->28
+2020-08-27 19:49:32,862 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.99865169]
+2020-08-27 19:49:32,862 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->29
+2020-08-27 19:49:34,678 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.11942991]
+2020-08-27 19:49:34,678 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->30
+2020-08-27 19:49:36,419 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.38022385]
+2020-08-27 19:49:36,419 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 13-->31
+2020-08-27 19:49:38,185 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.62907556]
+2020-08-27 19:49:38,186 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->0
+2020-08-27 19:49:39,926 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.54595301]
+2020-08-27 19:49:39,926 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->1
+2020-08-27 19:49:41,723 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5141021]
+2020-08-27 19:49:41,724 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->2
+2020-08-27 19:49:43,440 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.32156131]
+2020-08-27 19:49:43,441 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->3
+2020-08-27 19:49:45,175 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.60550394]
+2020-08-27 19:49:45,175 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->4
+2020-08-27 19:49:46,926 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.2121664]
+2020-08-27 19:49:46,926 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->5
+2020-08-27 19:49:48,705 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.06416569]
+2020-08-27 19:49:48,706 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->6
+2020-08-27 19:49:50,429 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.48586117]
+2020-08-27 19:49:50,429 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->7
+2020-08-27 19:49:52,150 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.51970907]
+2020-08-27 19:49:52,150 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->8
+2020-08-27 19:49:53,889 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.6642786]
+2020-08-27 19:49:53,889 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->9
+2020-08-27 19:49:55,649 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.580108]
+2020-08-27 19:49:55,649 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->10
+2020-08-27 19:49:57,402 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.50608999]
+2020-08-27 19:49:57,403 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->11
+2020-08-27 19:49:59,163 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.42380501]
+2020-08-27 19:49:59,164 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->12
+2020-08-27 19:50:00,917 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.6292522]
+2020-08-27 19:50:00,917 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->13
+2020-08-27 19:50:02,734 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.46372016]
+2020-08-27 19:50:02,734 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->15
+2020-08-27 19:50:04,493 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.91318501]
+2020-08-27 19:50:04,493 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->16
+2020-08-27 19:50:06,275 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.4569752]
+2020-08-27 19:50:06,275 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->17
+2020-08-27 19:50:08,009 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7096419]
+2020-08-27 19:50:08,010 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->18
+2020-08-27 19:50:09,747 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7523058]
+2020-08-27 19:50:09,748 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->19
+2020-08-27 19:50:11,519 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.40995758]
+2020-08-27 19:50:11,519 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->20
+2020-08-27 19:50:13,316 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.39534158]
+2020-08-27 19:50:13,316 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->21
+2020-08-27 19:50:15,061 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.72863785]
+2020-08-27 19:50:15,061 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->22
+2020-08-27 19:50:16,801 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.21992432]
+2020-08-27 19:50:16,801 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->23
+2020-08-27 19:50:18,517 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.0362992]
+2020-08-27 19:50:18,517 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->24
+2020-08-27 19:50:20,318 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.81359774]
+2020-08-27 19:50:20,318 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->25
+2020-08-27 19:50:22,111 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.39258719]
+2020-08-27 19:50:22,111 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->26
+2020-08-27 19:50:23,832 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.088369]
+2020-08-27 19:50:23,832 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->27
+2020-08-27 19:50:25,586 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.205413]
+2020-08-27 19:50:25,586 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->28
+2020-08-27 19:50:27,360 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.5957295]
+2020-08-27 19:50:27,361 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->29
+2020-08-27 19:50:29,085 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.47308476]
+2020-08-27 19:50:29,086 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->30
+2020-08-27 19:50:30,850 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.60441719]
+2020-08-27 19:50:30,851 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 14-->31
+2020-08-27 19:50:32,579 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.88690592]
+2020-08-27 19:50:32,579 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->0
+2020-08-27 19:50:34,357 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.89937705]
+2020-08-27 19:50:34,358 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->1
+2020-08-27 19:50:36,099 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.60105441]
+2020-08-27 19:50:36,100 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->2
+2020-08-27 19:50:37,825 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.64883349]
+2020-08-27 19:50:37,825 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->3
+2020-08-27 19:50:39,582 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.57507]
+2020-08-27 19:50:39,582 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->4
+2020-08-27 19:50:41,351 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.98890533]
+2020-08-27 19:50:41,351 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->5
+2020-08-27 19:50:43,121 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.48647585]
+2020-08-27 19:50:43,121 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->6
+2020-08-27 19:50:44,926 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.62798682]
+2020-08-27 19:50:44,927 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->7
+2020-08-27 19:50:46,732 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.39177737]
+2020-08-27 19:50:46,733 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->8
+2020-08-27 19:50:48,487 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.95749796]
+2020-08-27 19:50:48,487 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->9
+2020-08-27 19:50:50,288 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.33131102]
+2020-08-27 19:50:50,288 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->10
+2020-08-27 19:50:52,050 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.46959249]
+2020-08-27 19:50:52,051 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->11
+2020-08-27 19:50:53,812 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.78292842]
+2020-08-27 19:50:53,813 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->12
+2020-08-27 19:50:55,528 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.69379329]
+2020-08-27 19:50:55,529 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->13
+2020-08-27 19:50:57,313 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.77483663]
+2020-08-27 19:50:57,314 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->14
+2020-08-27 19:50:59,043 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.50985473]
+2020-08-27 19:50:59,044 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->16
+2020-08-27 19:51:00,772 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.45965276]
+2020-08-27 19:51:00,772 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->17
+2020-08-27 19:51:02,519 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.61214811]
+2020-08-27 19:51:02,520 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->18
+2020-08-27 19:51:04,294 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.74519795]
+2020-08-27 19:51:04,295 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->19
+2020-08-27 19:51:06,052 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7239324]
+2020-08-27 19:51:06,053 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->20
+2020-08-27 19:51:07,816 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.31533066]
+2020-08-27 19:51:07,816 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->21
+2020-08-27 19:51:09,637 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.43170269]
+2020-08-27 19:51:09,637 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->22
+2020-08-27 19:51:11,375 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.21101144]
+2020-08-27 19:51:11,375 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->23
+2020-08-27 19:51:13,165 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.24968085]
+2020-08-27 19:51:13,166 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->24
+2020-08-27 19:51:14,929 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.38617895]
+2020-08-27 19:51:14,929 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->25
+2020-08-27 19:51:16,664 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.44563925]
+2020-08-27 19:51:16,664 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->26
+2020-08-27 19:51:18,435 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.18363998]
+2020-08-27 19:51:18,435 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->27
+2020-08-27 19:51:20,190 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.074585]
+2020-08-27 19:51:20,191 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->28
+2020-08-27 19:51:21,957 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.72328708]
+2020-08-27 19:51:21,958 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->29
+2020-08-27 19:51:23,716 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.64607431]
+2020-08-27 19:51:23,716 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->30
+2020-08-27 19:51:25,617 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.72639503]
+2020-08-27 19:51:25,618 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 15-->31
+2020-08-27 19:51:27,442 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.48298555]
+2020-08-27 19:51:27,443 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->0
+2020-08-27 19:51:29,156 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.89849762]
+2020-08-27 19:51:29,157 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->1
+2020-08-27 19:51:30,908 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.42043351]
+2020-08-27 19:51:30,908 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->2
+2020-08-27 19:51:32,629 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.40568803]
+2020-08-27 19:51:32,630 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->3
+2020-08-27 19:51:34,392 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.31698152]
+2020-08-27 19:51:34,393 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->4
+2020-08-27 19:51:36,132 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.34236156]
+2020-08-27 19:51:36,132 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->5
+2020-08-27 19:51:37,886 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.25119318]
+2020-08-27 19:51:37,886 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->6
+2020-08-27 19:51:39,622 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.08126315]
+2020-08-27 19:51:39,623 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->7
+2020-08-27 19:51:41,368 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.91072391]
+2020-08-27 19:51:41,368 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->8
+2020-08-27 19:51:43,100 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.69594031]
+2020-08-27 19:51:43,100 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->9
+2020-08-27 19:51:44,871 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.12835139]
+2020-08-27 19:51:44,872 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->10
+2020-08-27 19:51:46,635 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.28181835]
+2020-08-27 19:51:46,636 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->11
+2020-08-27 19:51:48,371 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.00580646]
+2020-08-27 19:51:48,371 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->12
+2020-08-27 19:51:50,125 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.29748047]
+2020-08-27 19:51:50,126 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->13
+2020-08-27 19:51:51,909 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.04979674]
+2020-08-27 19:51:51,910 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->14
+2020-08-27 19:51:53,672 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.12502811]
+2020-08-27 19:51:53,672 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->15
+2020-08-27 19:51:55,398 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.92791319]
+2020-08-27 19:51:55,399 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->17
+2020-08-27 19:51:57,156 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.28862225]
+2020-08-27 19:51:57,157 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->18
+2020-08-27 19:51:58,895 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.02153807]
+2020-08-27 19:51:58,895 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->19
+2020-08-27 19:52:00,642 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.94965321]
+2020-08-27 19:52:00,642 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->20
+2020-08-27 19:52:02,433 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.35401679]
+2020-08-27 19:52:02,433 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->21
+2020-08-27 19:52:04,170 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.80981478]
+2020-08-27 19:52:04,170 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->22
+2020-08-27 19:52:05,912 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.29518169]
+2020-08-27 19:52:05,913 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->23
+2020-08-27 19:52:07,695 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.05303391]
+2020-08-27 19:52:07,696 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->24
+2020-08-27 19:52:09,444 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.93377718]
+2020-08-27 19:52:09,444 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->25
+2020-08-27 19:52:11,208 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.81101553]
+2020-08-27 19:52:11,209 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->26
+2020-08-27 19:52:12,926 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.23560863]
+2020-08-27 19:52:12,926 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->27
+2020-08-27 19:52:14,647 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.85643807]
+2020-08-27 19:52:14,648 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->28
+2020-08-27 19:52:16,389 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.34962302]
+2020-08-27 19:52:16,390 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->29
+2020-08-27 19:52:18,133 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.24091088]
+2020-08-27 19:52:18,134 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->30
+2020-08-27 19:52:19,908 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.28374062]
+2020-08-27 19:52:19,909 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 16-->31
+2020-08-27 19:52:21,660 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.88453222]
+2020-08-27 19:52:21,661 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->0
+2020-08-27 19:52:23,414 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.0273333]
+2020-08-27 19:52:23,414 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->1
+2020-08-27 19:52:25,157 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.58437429]
+2020-08-27 19:52:25,157 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->2
+2020-08-27 19:52:26,938 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.52450179]
+2020-08-27 19:52:26,938 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->3
+2020-08-27 19:52:28,734 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.40505342]
+2020-08-27 19:52:28,734 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->4
+2020-08-27 19:52:30,514 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.65731739]
+2020-08-27 19:52:30,514 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->5
+2020-08-27 19:52:32,304 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.05412099]
+2020-08-27 19:52:32,304 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->6
+2020-08-27 19:52:34,137 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.59030143]
+2020-08-27 19:52:34,138 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->7
+2020-08-27 19:52:35,908 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.23964394]
+2020-08-27 19:52:35,908 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->8
+2020-08-27 19:52:37,629 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.87793068]
+2020-08-27 19:52:37,629 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->9
+2020-08-27 19:52:39,450 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.33194227]
+2020-08-27 19:52:39,450 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->10
+2020-08-27 19:52:41,194 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.69528373]
+2020-08-27 19:52:41,194 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->11
+2020-08-27 19:52:42,923 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.8464468]
+2020-08-27 19:52:42,924 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->12
+2020-08-27 19:52:44,710 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.49816343]
+2020-08-27 19:52:44,711 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->13
+2020-08-27 19:52:46,524 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.86932462]
+2020-08-27 19:52:46,525 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->14
+2020-08-27 19:52:48,323 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.48046688]
+2020-08-27 19:52:48,323 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->15
+2020-08-27 19:52:50,088 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.22476209]
+2020-08-27 19:52:50,089 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->16
+2020-08-27 19:52:51,821 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2735536]
+2020-08-27 19:52:51,821 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->18
+2020-08-27 19:52:53,589 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.73845107]
+2020-08-27 19:52:53,590 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->19
+2020-08-27 19:52:55,329 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.88266824]
+2020-08-27 19:52:55,330 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->20
+2020-08-27 19:52:57,054 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.5724607]
+2020-08-27 19:52:57,054 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->21
+2020-08-27 19:52:58,866 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.85048101]
+2020-08-27 19:52:58,866 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->22
+2020-08-27 19:53:00,635 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.71161678]
+2020-08-27 19:53:00,635 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->23
+2020-08-27 19:53:02,394 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.31397126]
+2020-08-27 19:53:02,395 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->24
+2020-08-27 19:53:04,131 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.8443324]
+2020-08-27 19:53:04,131 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->25
+2020-08-27 19:53:05,908 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.95360456]
+2020-08-27 19:53:05,908 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->26
+2020-08-27 19:53:07,712 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.3789407]
+2020-08-27 19:53:07,713 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->27
+2020-08-27 19:53:09,500 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.21712732]
+2020-08-27 19:53:09,500 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->28
+2020-08-27 19:53:11,291 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.20153138]
+2020-08-27 19:53:11,292 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->29
+2020-08-27 19:53:13,088 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.016636]
+2020-08-27 19:53:13,088 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->30
+2020-08-27 19:53:14,849 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.09262907]
+2020-08-27 19:53:14,849 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 17-->31
+2020-08-27 19:53:16,580 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.65636383]
+2020-08-27 19:53:16,581 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->0
+2020-08-27 19:53:18,310 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.8133662]
+2020-08-27 19:53:18,311 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->1
+2020-08-27 19:53:20,089 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.55902817]
+2020-08-27 19:53:20,090 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->2
+2020-08-27 19:53:21,893 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2816537]
+2020-08-27 19:53:21,894 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->3
+2020-08-27 19:53:23,648 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.81909361]
+2020-08-27 19:53:23,649 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->4
+2020-08-27 19:53:25,412 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.65505185]
+2020-08-27 19:53:25,413 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->5
+2020-08-27 19:53:27,209 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.29737346]
+2020-08-27 19:53:27,210 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->6
+2020-08-27 19:53:29,002 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.43585666]
+2020-08-27 19:53:29,002 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->7
+2020-08-27 19:53:30,823 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.72733228]
+2020-08-27 19:53:30,824 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->8
+2020-08-27 19:53:32,597 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7509182]
+2020-08-27 19:53:32,597 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->9
+2020-08-27 19:53:34,338 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.84102811]
+2020-08-27 19:53:34,338 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->10
+2020-08-27 19:53:36,138 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.95313366]
+2020-08-27 19:53:36,138 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->11
+2020-08-27 19:53:37,890 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.5084214]
+2020-08-27 19:53:37,890 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->12
+2020-08-27 19:53:39,636 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.68604059]
+2020-08-27 19:53:39,636 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->13
+2020-08-27 19:53:41,395 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.74956589]
+2020-08-27 19:53:41,395 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->14
+2020-08-27 19:53:43,169 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.51398543]
+2020-08-27 19:53:43,170 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->15
+2020-08-27 19:53:44,959 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.24657414]
+2020-08-27 19:53:44,959 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->16
+2020-08-27 19:53:46,686 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.4061843]
+2020-08-27 19:53:46,686 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->17
+2020-08-27 19:53:48,445 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.68181835]
+2020-08-27 19:53:48,445 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->19
+2020-08-27 19:53:50,182 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.55407395]
+2020-08-27 19:53:50,182 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->20
+2020-08-27 19:53:51,985 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.71373145]
+2020-08-27 19:53:51,985 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->21
+2020-08-27 19:53:53,751 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.18381986]
+2020-08-27 19:53:53,752 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->22
+2020-08-27 19:53:55,528 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.21096212]
+2020-08-27 19:53:55,529 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->23
+2020-08-27 19:53:57,302 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.95081188]
+2020-08-27 19:53:57,303 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->24
+2020-08-27 19:53:59,054 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.20233993]
+2020-08-27 19:53:59,055 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->25
+2020-08-27 19:54:00,931 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.21979731]
+2020-08-27 19:54:00,932 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->26
+2020-08-27 19:54:02,671 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.75774877]
+2020-08-27 19:54:02,672 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->27
+2020-08-27 19:54:04,447 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.59405039]
+2020-08-27 19:54:04,447 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->28
+2020-08-27 19:54:06,243 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.39526215]
+2020-08-27 19:54:06,243 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->29
+2020-08-27 19:54:08,026 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.22789334]
+2020-08-27 19:54:08,026 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->30
+2020-08-27 19:54:09,821 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.75885626]
+2020-08-27 19:54:09,821 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 18-->31
+2020-08-27 19:54:11,585 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.38382726]
+2020-08-27 19:54:11,586 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->0
+2020-08-27 19:54:13,321 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.02842881]
+2020-08-27 19:54:13,322 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->1
+2020-08-27 19:54:15,045 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.8008033]
+2020-08-27 19:54:15,045 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->2
+2020-08-27 19:54:16,811 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.51210304]
+2020-08-27 19:54:16,812 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->3
+2020-08-27 19:54:18,609 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.62546829]
+2020-08-27 19:54:18,609 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->4
+2020-08-27 19:54:20,388 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.31253287]
+2020-08-27 19:54:20,388 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->5
+2020-08-27 19:54:22,140 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.15758228]
+2020-08-27 19:54:22,140 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->6
+2020-08-27 19:54:23,902 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.47406397]
+2020-08-27 19:54:23,902 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->7
+2020-08-27 19:54:25,653 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2403184]
+2020-08-27 19:54:25,654 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->8
+2020-08-27 19:54:27,382 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7465521]
+2020-08-27 19:54:27,382 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->9
+2020-08-27 19:54:29,116 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.97967345]
+2020-08-27 19:54:29,116 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->10
+2020-08-27 19:54:30,899 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.30127024]
+2020-08-27 19:54:30,900 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->11
+2020-08-27 19:54:32,736 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.89584603]
+2020-08-27 19:54:32,737 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->12
+2020-08-27 19:54:34,487 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.61916376]
+2020-08-27 19:54:34,487 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->13
+2020-08-27 19:54:36,245 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.02362736]
+2020-08-27 19:54:36,245 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->14
+2020-08-27 19:54:38,019 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.56663452]
+2020-08-27 19:54:38,019 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->15
+2020-08-27 19:54:39,778 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7229941]
+2020-08-27 19:54:39,779 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->16
+2020-08-27 19:54:41,546 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.09551504]
+2020-08-27 19:54:41,546 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->17
+2020-08-27 19:54:43,273 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.91753183]
+2020-08-27 19:54:43,274 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->18
+2020-08-27 19:54:45,066 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.79595631]
+2020-08-27 19:54:45,066 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->20
+2020-08-27 19:54:46,822 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.5670025]
+2020-08-27 19:54:46,823 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->21
+2020-08-27 19:54:48,585 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.23265258]
+2020-08-27 19:54:48,586 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->22
+2020-08-27 19:54:50,340 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.46772173]
+2020-08-27 19:54:50,340 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->23
+2020-08-27 19:54:52,067 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2304593]
+2020-08-27 19:54:52,067 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->24
+2020-08-27 19:54:53,811 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.86371962]
+2020-08-27 19:54:53,811 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->25
+2020-08-27 19:54:55,562 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [2.01923046]
+2020-08-27 19:54:55,563 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->26
+2020-08-27 19:54:57,318 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.53568506]
+2020-08-27 19:54:57,319 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->27
+2020-08-27 19:54:59,130 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.40670511]
+2020-08-27 19:54:59,130 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->28
+2020-08-27 19:55:00,879 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.41199539]
+2020-08-27 19:55:00,879 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->29
+2020-08-27 19:55:02,652 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.44648267]
+2020-08-27 19:55:02,653 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->30
+2020-08-27 19:55:04,432 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.13195312]
+2020-08-27 19:55:04,433 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 19-->31
+2020-08-27 19:55:06,250 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.45355187]
+2020-08-27 19:55:06,251 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->0
+2020-08-27 19:55:07,985 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.45321741]
+2020-08-27 19:55:07,986 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->1
+2020-08-27 19:55:09,706 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.08372118]
+2020-08-27 19:55:09,706 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->2
+2020-08-27 19:55:11,455 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.03944098]
+2020-08-27 19:55:11,456 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->3
+2020-08-27 19:55:13,223 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.08726716]
+2020-08-27 19:55:13,223 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->4
+2020-08-27 19:55:14,962 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.00292621]
+2020-08-27 19:55:14,963 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->5
+2020-08-27 19:55:16,723 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.1600746]
+2020-08-27 19:55:16,723 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->6
+2020-08-27 19:55:18,468 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.2076897]
+2020-08-27 19:55:18,468 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->7
+2020-08-27 19:55:20,229 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.63055717]
+2020-08-27 19:55:20,230 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->8
+2020-08-27 19:55:21,955 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.80864412]
+2020-08-27 19:55:21,956 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->9
+2020-08-27 19:55:23,758 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.3328445]
+2020-08-27 19:55:23,759 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->10
+2020-08-27 19:55:25,511 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.10640796]
+2020-08-27 19:55:25,512 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->11
+2020-08-27 19:55:27,264 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.1738757]
+2020-08-27 19:55:27,264 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->12
+2020-08-27 19:55:29,010 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.80653923]
+2020-08-27 19:55:29,010 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->13
+2020-08-27 19:55:30,783 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.60439526]
+2020-08-27 19:55:30,783 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->14
+2020-08-27 19:55:32,534 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.5805226]
+2020-08-27 19:55:32,534 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->15
+2020-08-27 19:55:34,312 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.43806961]
+2020-08-27 19:55:34,312 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->16
+2020-08-27 19:55:36,103 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.26384527]
+2020-08-27 19:55:36,103 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->17
+2020-08-27 19:55:37,874 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.80622647]
+2020-08-27 19:55:37,874 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->18
+2020-08-27 19:55:39,606 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.64298937]
+2020-08-27 19:55:39,606 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->19
+2020-08-27 19:55:41,338 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.23633025]
+2020-08-27 19:55:41,338 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->21
+2020-08-27 19:55:43,115 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.03942632]
+2020-08-27 19:55:43,116 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->22
+2020-08-27 19:55:44,936 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.14499754]
+2020-08-27 19:55:44,937 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->23
+2020-08-27 19:55:46,676 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.29093008]
+2020-08-27 19:55:46,677 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->24
+2020-08-27 19:55:48,449 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.7089094]
+2020-08-27 19:55:48,450 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->25
+2020-08-27 19:55:50,225 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.29811807]
+2020-08-27 19:55:50,226 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->26
+2020-08-27 19:55:51,992 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.86320947]
+2020-08-27 19:55:51,993 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->27
+2020-08-27 19:55:53,761 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.96124082]
+2020-08-27 19:55:53,761 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->28
+2020-08-27 19:55:55,537 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.08954496]
+2020-08-27 19:55:55,537 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->29
+2020-08-27 19:55:57,294 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.14491113]
+2020-08-27 19:55:57,295 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->30
+2020-08-27 19:55:59,136 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.20591236]
+2020-08-27 19:55:59,137 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 20-->31
+2020-08-27 19:56:00,906 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.90082295]
+2020-08-27 19:56:00,906 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->0
+2020-08-27 19:56:02,658 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.11163554]
+2020-08-27 19:56:02,658 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->1
+2020-08-27 19:56:04,432 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.93180667]
+2020-08-27 19:56:04,433 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->2
+2020-08-27 19:56:06,201 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.72879134]
+2020-08-27 19:56:06,202 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->3
+2020-08-27 19:56:07,933 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.74891751]
+2020-08-27 19:56:07,933 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->4
+2020-08-27 19:56:09,711 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.32731619]
+2020-08-27 19:56:09,711 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->5
+2020-08-27 19:56:11,495 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.28023836]
+2020-08-27 19:56:11,495 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->6
+2020-08-27 19:56:13,299 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.79503909]
+2020-08-27 19:56:13,300 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->7
+2020-08-27 19:56:15,089 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.61558729]
+2020-08-27 19:56:15,089 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->8
+2020-08-27 19:56:16,844 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.26374471]
+2020-08-27 19:56:16,845 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->9
+2020-08-27 19:56:18,618 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.90149847]
+2020-08-27 19:56:18,619 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->10
+2020-08-27 19:56:20,386 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-2.64033924]
+2020-08-27 19:56:20,386 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->11
+2020-08-27 19:56:22,173 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.61852125]
+2020-08-27 19:56:22,174 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->12
+2020-08-27 19:56:23,909 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.93532959]
+2020-08-27 19:56:23,910 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->13
+2020-08-27 19:56:25,671 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.21247601]
+2020-08-27 19:56:25,672 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->14
+2020-08-27 19:56:27,444 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.83879297]
+2020-08-27 19:56:27,444 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->15
+2020-08-27 19:56:29,227 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.49400661]
+2020-08-27 19:56:29,227 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->16
+2020-08-27 19:56:30,997 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.01740044]
+2020-08-27 19:56:30,998 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->17
+2020-08-27 19:56:32,784 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.29985749]
+2020-08-27 19:56:32,785 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->18
+2020-08-27 19:56:34,538 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.30877588]
+2020-08-27 19:56:34,538 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->19
+2020-08-27 19:56:36,334 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.36684095]
+2020-08-27 19:56:36,335 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->20
+2020-08-27 19:56:38,149 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.22674368]
+2020-08-27 19:56:38,149 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->22
+2020-08-27 19:56:39,961 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.91762968]
+2020-08-27 19:56:39,961 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->23
+2020-08-27 19:56:41,733 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.52864578]
+2020-08-27 19:56:41,734 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->24
+2020-08-27 19:56:43,563 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.02120178]
+2020-08-27 19:56:43,564 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->25
+2020-08-27 19:56:45,334 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.1320073]
+2020-08-27 19:56:45,335 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->26
+2020-08-27 19:56:47,066 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.48649541]
+2020-08-27 19:56:47,066 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->27
+2020-08-27 19:56:48,830 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.6017724]
+2020-08-27 19:56:48,830 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->28
+2020-08-27 19:56:50,626 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.42363431]
+2020-08-27 19:56:50,627 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->29
+2020-08-27 19:56:52,394 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.27354661]
+2020-08-27 19:56:52,395 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->30
+2020-08-27 19:56:54,138 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.9924801]
+2020-08-27 19:56:54,139 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 21-->31
+2020-08-27 19:56:55,905 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.34024673]
+2020-08-27 19:56:55,905 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->0
+2020-08-27 19:56:57,638 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.66309237]
+2020-08-27 19:56:57,639 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->1
+2020-08-27 19:56:59,389 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.41364048]
+2020-08-27 19:56:59,389 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->2
+2020-08-27 19:57:01,121 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.75469585]
+2020-08-27 19:57:01,122 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->3
+2020-08-27 19:57:02,866 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.28621484]
+2020-08-27 19:57:02,866 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->4
+2020-08-27 19:57:04,653 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.85948155]
+2020-08-27 19:57:04,653 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->5
+2020-08-27 19:57:06,436 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.55427618]
+2020-08-27 19:57:06,436 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->6
+2020-08-27 19:57:08,215 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.31079041]
+2020-08-27 19:57:08,215 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->7
+2020-08-27 19:57:10,043 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.15807062]
+2020-08-27 19:57:10,043 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->8
+2020-08-27 19:57:11,871 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.62022432]
+2020-08-27 19:57:11,872 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->9
+2020-08-27 19:57:13,695 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.17441273]
+2020-08-27 19:57:13,696 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->10
+2020-08-27 19:57:15,506 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.58233015]
+2020-08-27 19:57:15,506 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->11
+2020-08-27 19:57:17,287 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.89879405]
+2020-08-27 19:57:17,288 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->12
+2020-08-27 19:57:19,089 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.45750306]
+2020-08-27 19:57:19,089 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->13
+2020-08-27 19:57:20,840 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.51379206]
+2020-08-27 19:57:20,841 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->14
+2020-08-27 19:57:22,594 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.33678907]
+2020-08-27 19:57:22,595 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->15
+2020-08-27 19:57:24,427 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.0756211]
+2020-08-27 19:57:24,428 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->16
+2020-08-27 19:57:26,192 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.59344677]
+2020-08-27 19:57:26,192 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->17
+2020-08-27 19:57:27,953 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.86355424]
+2020-08-27 19:57:27,954 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->18
+2020-08-27 19:57:29,723 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.4615109]
+2020-08-27 19:57:29,724 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->19
+2020-08-27 19:57:31,564 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.80737121]
+2020-08-27 19:57:31,564 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->20
+2020-08-27 19:57:33,339 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.43402279]
+2020-08-27 19:57:33,340 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->21
+2020-08-27 19:57:35,104 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.06021132]
+2020-08-27 19:57:35,104 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->23
+2020-08-27 19:57:36,849 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.50179504]
+2020-08-27 19:57:36,850 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->24
+2020-08-27 19:57:38,686 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.99957013]
+2020-08-27 19:57:38,686 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->25
+2020-08-27 19:57:40,472 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.15595667]
+2020-08-27 19:57:40,472 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->26
+2020-08-27 19:57:42,238 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.29151839]
+2020-08-27 19:57:42,239 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->27
+2020-08-27 19:57:43,998 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.28363012]
+2020-08-27 19:57:43,999 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->28
+2020-08-27 19:57:45,778 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.65467043]
+2020-08-27 19:57:45,779 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->29
+2020-08-27 19:57:47,563 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.98873657]
+2020-08-27 19:57:47,563 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->30
+2020-08-27 19:57:49,338 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.22049527]
+2020-08-27 19:57:49,338 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 22-->31
+2020-08-27 19:57:51,080 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.406935]
+2020-08-27 19:57:51,080 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->0
+2020-08-27 19:57:52,835 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.25056917]
+2020-08-27 19:57:52,836 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->1
+2020-08-27 19:57:54,602 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.08542111]
+2020-08-27 19:57:54,603 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->2
+2020-08-27 19:57:56,393 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.7263306]
+2020-08-27 19:57:56,393 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->3
+2020-08-27 19:57:58,147 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.14527011]
+2020-08-27 19:57:58,147 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->4
+2020-08-27 19:57:59,917 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-2.13041044]
+2020-08-27 19:57:59,917 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->5
+2020-08-27 19:58:01,693 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.94906801]
+2020-08-27 19:58:01,693 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->6
+2020-08-27 19:58:03,523 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.42278625]
+2020-08-27 19:58:03,523 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->7
+2020-08-27 19:58:05,285 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.73336984]
+2020-08-27 19:58:05,286 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->8
+2020-08-27 19:58:07,045 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.21549654]
+2020-08-27 19:58:07,046 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->9
+2020-08-27 19:58:08,820 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.55126836]
+2020-08-27 19:58:08,821 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->10
+2020-08-27 19:58:10,609 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.11143046]
+2020-08-27 19:58:10,609 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->11
+2020-08-27 19:58:12,361 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.16477408]
+2020-08-27 19:58:12,361 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->12
+2020-08-27 19:58:14,094 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.88251753]
+2020-08-27 19:58:14,094 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->13
+2020-08-27 19:58:15,910 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.87985838]
+2020-08-27 19:58:15,910 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->14
+2020-08-27 19:58:17,674 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.06743195]
+2020-08-27 19:58:17,674 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->15
+2020-08-27 19:58:19,448 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.00221458]
+2020-08-27 19:58:19,448 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->16
+2020-08-27 19:58:21,198 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.20126114]
+2020-08-27 19:58:21,198 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->17
+2020-08-27 19:58:22,940 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.39447345]
+2020-08-27 19:58:22,941 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->18
+2020-08-27 19:58:24,783 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.37074355]
+2020-08-27 19:58:24,784 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->19
+2020-08-27 19:58:26,557 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.31825336]
+2020-08-27 19:58:26,557 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->20
+2020-08-27 19:58:28,337 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.6663079]
+2020-08-27 19:58:28,338 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->21
+2020-08-27 19:58:30,087 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.80577513]
+2020-08-27 19:58:30,088 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->22
+2020-08-27 19:58:31,885 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.49898958]
+2020-08-27 19:58:31,886 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->24
+2020-08-27 19:58:33,668 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.0826099]
+2020-08-27 19:58:33,668 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->25
+2020-08-27 19:58:35,416 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.07987939]
+2020-08-27 19:58:35,417 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->26
+2020-08-27 19:58:37,156 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.36745911]
+2020-08-27 19:58:37,156 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->27
+2020-08-27 19:58:38,977 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.25092755]
+2020-08-27 19:58:38,978 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->28
+2020-08-27 19:58:40,733 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.1129403]
+2020-08-27 19:58:40,733 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->29
+2020-08-27 19:58:42,484 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.33363658]
+2020-08-27 19:58:42,484 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->30
+2020-08-27 19:58:44,266 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.78067994]
+2020-08-27 19:58:44,267 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 23-->31
+2020-08-27 19:58:46,021 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.16902755]
+2020-08-27 19:58:46,021 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->0
+2020-08-27 19:58:47,791 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.28841399]
+2020-08-27 19:58:47,791 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->1
+2020-08-27 19:58:49,570 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.98120753]
+2020-08-27 19:58:49,570 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->2
+2020-08-27 19:58:51,356 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.53650003]
+2020-08-27 19:58:51,356 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->3
+2020-08-27 19:58:53,181 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.8813396]
+2020-08-27 19:58:53,182 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->4
+2020-08-27 19:58:54,963 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.63190558]
+2020-08-27 19:58:54,964 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->5
+2020-08-27 19:58:56,755 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.1514254]
+2020-08-27 19:58:56,755 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->6
+2020-08-27 19:58:58,547 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.89704841]
+2020-08-27 19:58:58,548 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->7
+2020-08-27 19:59:00,366 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.15874912]
+2020-08-27 19:59:00,367 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->8
+2020-08-27 19:59:02,135 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.26179769]
+2020-08-27 19:59:02,135 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->9
+2020-08-27 19:59:03,938 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.42629063]
+2020-08-27 19:59:03,938 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->10
+2020-08-27 19:59:05,727 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.18708199]
+2020-08-27 19:59:05,728 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->11
+2020-08-27 19:59:07,496 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.91823033]
+2020-08-27 19:59:07,497 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->12
+2020-08-27 19:59:09,274 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.94241317]
+2020-08-27 19:59:09,274 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->13
+2020-08-27 19:59:11,109 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.28088436]
+2020-08-27 19:59:11,109 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->14
+2020-08-27 19:59:12,850 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.97813646]
+2020-08-27 19:59:12,851 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->15
+2020-08-27 19:59:14,669 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.11537243]
+2020-08-27 19:59:14,670 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->16
+2020-08-27 19:59:16,484 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.18121417]
+2020-08-27 19:59:16,484 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->17
+2020-08-27 19:59:18,276 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.24235499]
+2020-08-27 19:59:18,276 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->18
+2020-08-27 19:59:20,041 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.56678725]
+2020-08-27 19:59:20,042 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->19
+2020-08-27 19:59:21,823 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.41726166]
+2020-08-27 19:59:21,823 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->20
+2020-08-27 19:59:23,583 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.04912011]
+2020-08-27 19:59:23,583 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->21
+2020-08-27 19:59:25,403 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.04789548]
+2020-08-27 19:59:25,404 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->22
+2020-08-27 19:59:27,177 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2029822]
+2020-08-27 19:59:27,177 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->23
+2020-08-27 19:59:28,911 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.96896638]
+2020-08-27 19:59:28,911 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->25
+2020-08-27 19:59:30,680 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.29256015]
+2020-08-27 19:59:30,680 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->26
+2020-08-27 19:59:32,420 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.22128285]
+2020-08-27 19:59:32,420 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->27
+2020-08-27 19:59:34,192 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.77315]
+2020-08-27 19:59:34,193 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->28
+2020-08-27 19:59:35,949 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.09306447]
+2020-08-27 19:59:35,950 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->29
+2020-08-27 19:59:37,756 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-2.2575768]
+2020-08-27 19:59:37,756 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->30
+2020-08-27 19:59:39,576 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.73126011]
+2020-08-27 19:59:39,577 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 24-->31
+2020-08-27 19:59:41,399 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.22615578]
+2020-08-27 19:59:41,399 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->0
+2020-08-27 19:59:43,159 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.80650724]
+2020-08-27 19:59:43,160 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->1
+2020-08-27 19:59:44,917 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.38453015]
+2020-08-27 19:59:44,917 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->2
+2020-08-27 19:59:46,691 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.14690241]
+2020-08-27 19:59:46,691 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->3
+2020-08-27 19:59:48,730 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.2540697]
+2020-08-27 19:59:48,731 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->4
+2020-08-27 19:59:50,518 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.43958515]
+2020-08-27 19:59:50,518 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->5
+2020-08-27 19:59:52,330 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.30202906]
+2020-08-27 19:59:52,331 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->6
+2020-08-27 19:59:54,168 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.03542455]
+2020-08-27 19:59:54,168 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->7
+2020-08-27 19:59:55,986 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.82305629]
+2020-08-27 19:59:55,987 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->8
+2020-08-27 19:59:57,759 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.53825279]
+2020-08-27 19:59:57,759 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->9
+2020-08-27 19:59:59,537 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.1819709]
+2020-08-27 19:59:59,537 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->10
+2020-08-27 20:00:01,300 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.53724151]
+2020-08-27 20:00:01,301 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->11
+2020-08-27 20:00:03,114 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.48138308]
+2020-08-27 20:00:03,114 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->12
+2020-08-27 20:00:04,893 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.45528393]
+2020-08-27 20:00:04,893 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->13
+2020-08-27 20:00:06,676 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.45824452]
+2020-08-27 20:00:06,676 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->14
+2020-08-27 20:00:08,436 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.52720816]
+2020-08-27 20:00:08,436 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->15
+2020-08-27 20:00:10,258 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.23466022]
+2020-08-27 20:00:10,259 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->16
+2020-08-27 20:00:11,986 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.46538208]
+2020-08-27 20:00:11,987 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->17
+2020-08-27 20:00:13,761 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.68992306]
+2020-08-27 20:00:13,762 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->18
+2020-08-27 20:00:15,550 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.11967854]
+2020-08-27 20:00:15,550 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->19
+2020-08-27 20:00:17,288 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.71988044]
+2020-08-27 20:00:17,288 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->20
+2020-08-27 20:00:19,036 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.00788122]
+2020-08-27 20:00:19,036 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->21
+2020-08-27 20:00:20,768 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.30826227]
+2020-08-27 20:00:20,768 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->22
+2020-08-27 20:00:22,554 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.47299839]
+2020-08-27 20:00:22,555 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->23
+2020-08-27 20:00:24,335 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.41064943]
+2020-08-27 20:00:24,335 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->24
+2020-08-27 20:00:26,153 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.23006398]
+2020-08-27 20:00:26,154 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->26
+2020-08-27 20:00:27,889 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.21719644]
+2020-08-27 20:00:27,890 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->27
+2020-08-27 20:00:29,713 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.40415609]
+2020-08-27 20:00:29,714 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->28
+2020-08-27 20:00:31,484 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.0599099]
+2020-08-27 20:00:31,485 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->29
+2020-08-27 20:00:33,227 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.36503852]
+2020-08-27 20:00:33,228 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->30
+2020-08-27 20:00:35,007 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.00519995]
+2020-08-27 20:00:35,007 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 25-->31
+2020-08-27 20:00:36,752 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.84904421]
+2020-08-27 20:00:36,753 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->0
+2020-08-27 20:00:38,528 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-2.0915844]
+2020-08-27 20:00:38,528 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->1
+2020-08-27 20:00:40,282 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.1487637]
+2020-08-27 20:00:40,282 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->2
+2020-08-27 20:00:42,100 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.38798349]
+2020-08-27 20:00:42,100 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->3
+2020-08-27 20:00:43,851 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.83498114]
+2020-08-27 20:00:43,852 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->4
+2020-08-27 20:00:45,635 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.42169529]
+2020-08-27 20:00:45,636 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->5
+2020-08-27 20:00:47,385 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.70648825]
+2020-08-27 20:00:47,386 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->6
+2020-08-27 20:00:49,174 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.02073006]
+2020-08-27 20:00:49,174 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->7
+2020-08-27 20:00:50,963 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.35449517]
+2020-08-27 20:00:50,964 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->8
+2020-08-27 20:00:52,803 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.64573532]
+2020-08-27 20:00:52,803 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->9
+2020-08-27 20:00:54,590 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.32134188]
+2020-08-27 20:00:54,590 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->10
+2020-08-27 20:00:56,355 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.15354899]
+2020-08-27 20:00:56,356 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->11
+2020-08-27 20:00:58,151 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.74176874]
+2020-08-27 20:00:58,152 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->12
+2020-08-27 20:00:59,956 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.63070574]
+2020-08-27 20:00:59,956 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->13
+2020-08-27 20:01:01,717 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.68826044]
+2020-08-27 20:01:01,718 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->14
+2020-08-27 20:01:03,508 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.25267158]
+2020-08-27 20:01:03,509 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->15
+2020-08-27 20:01:05,262 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.04575996]
+2020-08-27 20:01:05,262 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->16
+2020-08-27 20:01:07,001 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.03113649]
+2020-08-27 20:01:07,001 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->17
+2020-08-27 20:01:08,796 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.12458706]
+2020-08-27 20:01:08,796 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->18
+2020-08-27 20:01:10,538 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.39621387]
+2020-08-27 20:01:10,538 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->19
+2020-08-27 20:01:12,325 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.13939624]
+2020-08-27 20:01:12,326 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->20
+2020-08-27 20:01:14,113 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.62662671]
+2020-08-27 20:01:14,113 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->21
+2020-08-27 20:01:15,874 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.56462416]
+2020-08-27 20:01:15,874 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->22
+2020-08-27 20:01:17,624 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.44277167]
+2020-08-27 20:01:17,624 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->23
+2020-08-27 20:01:19,360 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.11172385]
+2020-08-27 20:01:19,360 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->24
+2020-08-27 20:01:21,150 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.84580427]
+2020-08-27 20:01:21,151 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->25
+2020-08-27 20:01:22,889 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.14381505]
+2020-08-27 20:01:22,890 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->27
+2020-08-27 20:01:24,704 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.92775616]
+2020-08-27 20:01:24,704 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->28
+2020-08-27 20:01:26,476 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.02759293]
+2020-08-27 20:01:26,477 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->29
+2020-08-27 20:01:28,301 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.09642815]
+2020-08-27 20:01:28,301 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->30
+2020-08-27 20:01:30,094 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.33016854]
+2020-08-27 20:01:30,094 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 26-->31
+2020-08-27 20:01:31,835 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.817999]
+2020-08-27 20:01:31,835 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->0
+2020-08-27 20:01:33,607 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.11480039]
+2020-08-27 20:01:33,608 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->1
+2020-08-27 20:01:35,399 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.67895499]
+2020-08-27 20:01:35,399 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->2
+2020-08-27 20:01:37,183 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.59178556]
+2020-08-27 20:01:37,184 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->3
+2020-08-27 20:01:38,970 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.72580518]
+2020-08-27 20:01:38,970 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->4
+2020-08-27 20:01:40,773 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.14487098]
+2020-08-27 20:01:40,773 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->5
+2020-08-27 20:01:42,546 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.79427994]
+2020-08-27 20:01:42,546 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->6
+2020-08-27 20:01:44,298 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.70343423]
+2020-08-27 20:01:44,298 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->7
+2020-08-27 20:01:46,064 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.59566028]
+2020-08-27 20:01:46,065 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->8
+2020-08-27 20:01:47,804 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.46243721]
+2020-08-27 20:01:47,804 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->9
+2020-08-27 20:01:49,582 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.41481015]
+2020-08-27 20:01:49,583 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->10
+2020-08-27 20:01:51,383 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.52811583]
+2020-08-27 20:01:51,384 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->11
+2020-08-27 20:01:53,143 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.00607304]
+2020-08-27 20:01:53,143 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->12
+2020-08-27 20:01:54,888 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.05351588]
+2020-08-27 20:01:54,888 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->13
+2020-08-27 20:01:56,691 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.1687377]
+2020-08-27 20:01:56,692 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->14
+2020-08-27 20:01:58,527 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.19701614]
+2020-08-27 20:01:58,528 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->15
+2020-08-27 20:02:00,276 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.06837597]
+2020-08-27 20:02:00,277 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->16
+2020-08-27 20:02:02,027 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.21245312]
+2020-08-27 20:02:02,027 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->17
+2020-08-27 20:02:03,798 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.30919539]
+2020-08-27 20:02:03,799 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->18
+2020-08-27 20:02:05,542 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.88193625]
+2020-08-27 20:02:05,543 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->19
+2020-08-27 20:02:07,328 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.06214902]
+2020-08-27 20:02:07,328 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->20
+2020-08-27 20:02:09,102 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.02169507]
+2020-08-27 20:02:09,102 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->21
+2020-08-27 20:02:10,870 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.37272886]
+2020-08-27 20:02:10,870 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->22
+2020-08-27 20:02:12,693 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.95581402]
+2020-08-27 20:02:12,694 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->23
+2020-08-27 20:02:14,437 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.30371177]
+2020-08-27 20:02:14,437 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->24
+2020-08-27 20:02:16,243 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.46730557]
+2020-08-27 20:02:16,243 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->25
+2020-08-27 20:02:18,016 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.72324014]
+2020-08-27 20:02:18,016 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->26
+2020-08-27 20:02:19,811 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.30576451]
+2020-08-27 20:02:19,812 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->28
+2020-08-27 20:02:21,606 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.95041046]
+2020-08-27 20:02:21,606 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->29
+2020-08-27 20:02:23,419 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.36873169]
+2020-08-27 20:02:23,420 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->30
+2020-08-27 20:02:25,215 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.12079833]
+2020-08-27 20:02:25,215 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 27-->31
+2020-08-27 20:02:26,972 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.33217949]
+2020-08-27 20:02:26,972 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->0
+2020-08-27 20:02:28,827 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.01706885]
+2020-08-27 20:02:28,827 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->1
+2020-08-27 20:02:30,588 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.44818029]
+2020-08-27 20:02:30,589 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->2
+2020-08-27 20:02:32,349 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.45368906]
+2020-08-27 20:02:32,350 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->3
+2020-08-27 20:02:34,082 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.14551868]
+2020-08-27 20:02:34,082 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->4
+2020-08-27 20:02:35,937 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.96575073]
+2020-08-27 20:02:35,937 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->5
+2020-08-27 20:02:37,727 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.18690737]
+2020-08-27 20:02:37,728 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->6
+2020-08-27 20:02:39,493 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.09777986]
+2020-08-27 20:02:39,494 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->7
+2020-08-27 20:02:41,276 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.32252483]
+2020-08-27 20:02:41,276 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->8
+2020-08-27 20:02:43,034 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.91776256]
+2020-08-27 20:02:43,035 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->9
+2020-08-27 20:02:44,862 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.97983027]
+2020-08-27 20:02:44,863 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->10
+2020-08-27 20:02:46,650 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.99544468]
+2020-08-27 20:02:46,651 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->11
+2020-08-27 20:02:48,463 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.00481828]
+2020-08-27 20:02:48,464 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->12
+2020-08-27 20:02:50,268 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.98385153]
+2020-08-27 20:02:50,268 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->13
+2020-08-27 20:02:52,061 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.09529538]
+2020-08-27 20:02:52,062 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->14
+2020-08-27 20:02:53,849 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.43884593]
+2020-08-27 20:02:53,849 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->15
+2020-08-27 20:02:55,596 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.24429559]
+2020-08-27 20:02:55,597 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->16
+2020-08-27 20:02:57,372 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.33565642]
+2020-08-27 20:02:57,372 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->17
+2020-08-27 20:02:59,148 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.19047725]
+2020-08-27 20:02:59,149 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->18
+2020-08-27 20:03:00,954 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.2408177]
+2020-08-27 20:03:00,954 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->19
+2020-08-27 20:03:02,712 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.35848956]
+2020-08-27 20:03:02,712 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->20
+2020-08-27 20:03:04,557 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.88152222]
+2020-08-27 20:03:04,558 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->21
+2020-08-27 20:03:06,352 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.20285028]
+2020-08-27 20:03:06,353 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->22
+2020-08-27 20:03:08,104 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.89820751]
+2020-08-27 20:03:08,104 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->23
+2020-08-27 20:03:09,874 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.38747793]
+2020-08-27 20:03:09,875 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->24
+2020-08-27 20:03:11,639 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.26965121]
+2020-08-27 20:03:11,639 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->25
+2020-08-27 20:03:13,391 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.21843062]
+2020-08-27 20:03:13,391 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->26
+2020-08-27 20:03:15,213 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.87633368]
+2020-08-27 20:03:15,214 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->27
+2020-08-27 20:03:16,964 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.80798632]
+2020-08-27 20:03:16,965 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->29
+2020-08-27 20:03:18,700 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.21991942]
+2020-08-27 20:03:18,701 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->30
+2020-08-27 20:03:20,486 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.06253157]
+2020-08-27 20:03:20,486 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 28-->31
+2020-08-27 20:03:22,245 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.99760479]
+2020-08-27 20:03:22,246 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->0
+2020-08-27 20:03:23,981 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.35506593]
+2020-08-27 20:03:23,982 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->1
+2020-08-27 20:03:25,747 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.44219365]
+2020-08-27 20:03:25,748 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->2
+2020-08-27 20:03:27,558 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.51065804]
+2020-08-27 20:03:27,559 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->3
+2020-08-27 20:03:29,338 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.04887513]
+2020-08-27 20:03:29,338 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->4
+2020-08-27 20:03:31,119 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.75914924]
+2020-08-27 20:03:31,119 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->5
+2020-08-27 20:03:32,921 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.29990573]
+2020-08-27 20:03:32,921 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->6
+2020-08-27 20:03:34,661 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.63349939]
+2020-08-27 20:03:34,661 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->7
+2020-08-27 20:03:36,447 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-2.53605836]
+2020-08-27 20:03:36,447 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->8
+2020-08-27 20:03:38,246 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.49772487]
+2020-08-27 20:03:38,246 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->9
+2020-08-27 20:03:40,030 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.14555343]
+2020-08-27 20:03:40,030 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->10
+2020-08-27 20:03:41,792 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.78087444]
+2020-08-27 20:03:41,792 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->11
+2020-08-27 20:03:43,546 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.48387075]
+2020-08-27 20:03:43,546 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->12
+2020-08-27 20:03:45,297 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.36974081]
+2020-08-27 20:03:45,297 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->13
+2020-08-27 20:03:47,075 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.78630686]
+2020-08-27 20:03:47,076 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->14
+2020-08-27 20:03:48,865 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.95213829]
+2020-08-27 20:03:48,865 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->15
+2020-08-27 20:03:50,658 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.68679239]
+2020-08-27 20:03:50,658 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->16
+2020-08-27 20:03:52,406 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.44731595]
+2020-08-27 20:03:52,406 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->17
+2020-08-27 20:03:54,196 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.44585743]
+2020-08-27 20:03:54,196 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->18
+2020-08-27 20:03:55,963 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.99953176]
+2020-08-27 20:03:55,964 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->19
+2020-08-27 20:03:57,729 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.09551411]
+2020-08-27 20:03:57,730 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->20
+2020-08-27 20:03:59,518 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.89275576]
+2020-08-27 20:03:59,519 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->21
+2020-08-27 20:04:01,380 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.23362349]
+2020-08-27 20:04:01,381 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->22
+2020-08-27 20:04:03,173 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.57067467]
+2020-08-27 20:04:03,174 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->23
+2020-08-27 20:04:04,984 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.19024284]
+2020-08-27 20:04:04,985 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->24
+2020-08-27 20:04:06,742 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-2.57788951]
+2020-08-27 20:04:06,743 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->25
+2020-08-27 20:04:08,530 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.09340204]
+2020-08-27 20:04:08,531 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->26
+2020-08-27 20:04:10,317 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.08251831]
+2020-08-27 20:04:10,318 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->27
+2020-08-27 20:04:12,084 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.2410214]
+2020-08-27 20:04:12,085 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->28
+2020-08-27 20:04:13,835 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.87262483]
+2020-08-27 20:04:13,835 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->30
+2020-08-27 20:04:15,587 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.25462219]
+2020-08-27 20:04:15,588 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 29-->31
+2020-08-27 20:04:17,323 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.83846106]
+2020-08-27 20:04:17,323 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->0
+2020-08-27 20:04:19,077 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.91682882]
+2020-08-27 20:04:19,077 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->1
+2020-08-27 20:04:20,997 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.41883452]
+2020-08-27 20:04:20,997 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->2
+2020-08-27 20:04:22,853 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.26247465]
+2020-08-27 20:04:22,854 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->3
+2020-08-27 20:04:24,659 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.54461783]
+2020-08-27 20:04:24,660 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->4
+2020-08-27 20:04:26,463 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.02558109]
+2020-08-27 20:04:26,463 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->5
+2020-08-27 20:04:28,226 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.17642459]
+2020-08-27 20:04:28,226 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->6
+2020-08-27 20:04:30,073 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.70549697]
+2020-08-27 20:04:30,074 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->7
+2020-08-27 20:04:31,852 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.29342403]
+2020-08-27 20:04:31,853 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->8
+2020-08-27 20:04:33,640 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.23599052]
+2020-08-27 20:04:33,641 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->9
+2020-08-27 20:04:35,445 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.19382722]
+2020-08-27 20:04:35,445 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->10
+2020-08-27 20:04:37,259 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.18659762]
+2020-08-27 20:04:37,259 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->11
+2020-08-27 20:04:39,113 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.73975482]
+2020-08-27 20:04:39,113 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->12
+2020-08-27 20:04:40,891 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.11898758]
+2020-08-27 20:04:40,892 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->13
+2020-08-27 20:04:42,692 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.13082833]
+2020-08-27 20:04:42,692 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->14
+2020-08-27 20:04:44,502 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.72757601]
+2020-08-27 20:04:44,502 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->15
+2020-08-27 20:04:46,269 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.80143631]
+2020-08-27 20:04:46,269 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->16
+2020-08-27 20:04:48,058 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.04416494]
+2020-08-27 20:04:48,059 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->17
+2020-08-27 20:04:49,839 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.73507623]
+2020-08-27 20:04:49,839 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->18
+2020-08-27 20:04:51,619 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.35220451]
+2020-08-27 20:04:51,619 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->19
+2020-08-27 20:04:53,371 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.5172995]
+2020-08-27 20:04:53,371 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->20
+2020-08-27 20:04:55,139 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.26981716]
+2020-08-27 20:04:55,139 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->21
+2020-08-27 20:04:56,941 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.48619403]
+2020-08-27 20:04:56,941 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->22
+2020-08-27 20:04:58,725 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.53191068]
+2020-08-27 20:04:58,726 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->23
+2020-08-27 20:05:00,503 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.38283865]
+2020-08-27 20:05:00,503 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->24
+2020-08-27 20:05:02,305 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.19910499]
+2020-08-27 20:05:02,305 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->25
+2020-08-27 20:05:04,090 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.43583798]
+2020-08-27 20:05:04,090 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->26
+2020-08-27 20:05:05,860 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.28927551]
+2020-08-27 20:05:05,860 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->27
+2020-08-27 20:05:07,670 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.02150579]
+2020-08-27 20:05:07,670 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->28
+2020-08-27 20:05:09,441 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.43271421]
+2020-08-27 20:05:09,441 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->29
+2020-08-27 20:05:11,243 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.19418202]
+2020-08-27 20:05:11,244 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 30-->31
+2020-08-27 20:05:13,023 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.24820609]
+2020-08-27 20:05:13,024 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->0
+2020-08-27 20:05:14,805 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.57904531]
+2020-08-27 20:05:14,806 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->1
+2020-08-27 20:05:16,611 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.16703869]
+2020-08-27 20:05:16,612 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->2
+2020-08-27 20:05:18,452 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.07835662]
+2020-08-27 20:05:18,452 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->3
+2020-08-27 20:05:20,271 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.97347686]
+2020-08-27 20:05:20,271 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->4
+2020-08-27 20:05:22,045 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.32700937]
+2020-08-27 20:05:22,046 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->5
+2020-08-27 20:05:23,801 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.84484078]
+2020-08-27 20:05:23,802 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->6
+2020-08-27 20:05:25,598 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.60943471]
+2020-08-27 20:05:25,598 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->7
+2020-08-27 20:05:27,397 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.35934278]
+2020-08-27 20:05:27,397 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->8
+2020-08-27 20:05:29,204 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.39429923]
+2020-08-27 20:05:29,204 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->9
+2020-08-27 20:05:31,024 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.60831019]
+2020-08-27 20:05:31,024 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->10
+2020-08-27 20:05:32,809 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.11856836]
+2020-08-27 20:05:32,809 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->11
+2020-08-27 20:05:34,577 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.33711606]
+2020-08-27 20:05:34,578 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->12
+2020-08-27 20:05:36,365 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.6380411]
+2020-08-27 20:05:36,366 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->13
+2020-08-27 20:05:38,108 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.47443665]
+2020-08-27 20:05:38,109 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->14
+2020-08-27 20:05:39,917 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.45644223]
+2020-08-27 20:05:39,918 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->15
+2020-08-27 20:05:41,723 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.52648654]
+2020-08-27 20:05:41,723 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->16
+2020-08-27 20:05:43,537 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.01287901]
+2020-08-27 20:05:43,538 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->17
+2020-08-27 20:05:45,283 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.26821371]
+2020-08-27 20:05:45,283 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->18
+2020-08-27 20:05:47,115 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.00736481]
+2020-08-27 20:05:47,116 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->19
+2020-08-27 20:05:48,877 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.18216538]
+2020-08-27 20:05:48,877 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->20
+2020-08-27 20:05:50,686 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.99020929]
+2020-08-27 20:05:50,687 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->21
+2020-08-27 20:05:52,509 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.62223193]
+2020-08-27 20:05:52,509 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->22
+2020-08-27 20:05:54,321 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.3647632]
+2020-08-27 20:05:54,322 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->23
+2020-08-27 20:05:56,130 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.72788417]
+2020-08-27 20:05:56,131 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->24
+2020-08-27 20:05:57,921 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.30254763]
+2020-08-27 20:05:57,921 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->25
+2020-08-27 20:05:59,676 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-1.11419645]
+2020-08-27 20:05:59,677 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->26
+2020-08-27 20:06:01,430 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.75212779]
+2020-08-27 20:06:01,431 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->27
+2020-08-27 20:06:03,250 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.05441215]
+2020-08-27 20:06:03,250 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->28
+2020-08-27 20:06:05,057 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [1.71902966]
+2020-08-27 20:06:05,057 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->29
+2020-08-27 20:06:06,812 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [0.21293356]
+2020-08-27 20:06:06,812 - INFO - model_sklearnSVM.py - generate_prob_matrix - calculating: 31-->30
+2020-08-27 20:06:08,601 - DEBUG - model_sklearnSVM.py - generate_prob_matrix - [-0.56591066]
+2020-08-27 20:06:08,620 - INFO - relation.py - generate_relation_matrix - using approach1
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - __find_circle - start: 1
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - __find_circle - circle: [1]
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - __find_circle - children: [3]
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - __find_circle - start: 1
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - __find_circle - circle: [1, 3]
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - __find_circle - children: [1, 18]
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - __find_circle - circle found: [1, 3]
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - __find_circle - returned True -> end algo: [1, 3]
+2020-08-27 20:06:08,621 - DEBUG - approach1.py - make_relation_matrix - calling process circle
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __process_circle - 1 --> 0
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - start: 4
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - circle: [4]
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - children: []
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - no circle found[]
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - start: 5
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - circle: [5]
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - children: []
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - no circle found[]
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - start: 8
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - circle: [8]
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - children: [12, 15]
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - start: 8
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - circle: [8, 12]
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - children: []
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - branch detected: [8]
+2020-08-27 20:06:08,622 - DEBUG - approach1.py - __find_circle - start: 8
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - circle: [8, 15]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - children: []
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - branch detected: [8]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - no circle found[]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - start: 9
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - circle: [9]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - children: [13]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - start: 9
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - circle: [9, 13]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - children: [9]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - circle found: [9, 13]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - returned True -> end algo: [9, 13]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - make_relation_matrix - calling process circle
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __process_circle - 13 --> 5
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - start: 14
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - circle: [14]
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - children: []
+2020-08-27 20:06:08,623 - DEBUG - approach1.py - __find_circle - no circle found[]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - start: 18
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - circle: [18]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - children: [24]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - start: 18
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - circle: [18, 24]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - children: []
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - branch detected: [18]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - no circle found[]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - start: 20
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - circle: [20]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - children: []
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - no circle found[]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - start: 26
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - circle: [26]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - children: [31]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - start: 26
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - circle: [26, 31]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - children: [26]
+2020-08-27 20:06:08,624 - DEBUG - approach1.py - __find_circle - circle found: [26, 31]
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - returned True -> end algo: [26, 31]
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - make_relation_matrix - calling process circle
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __process_circle - 31 --> 28
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - start: 27
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - circle: [27]
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - children: [28, 30]
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - start: 27
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - circle: [27, 28]
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - children: [27]
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - circle found: [27, 28]
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - returned True -> end algo: [27, 28]
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - make_relation_matrix - calling process circle
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __process_circle - 27 --> 18
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - make_relation_matrix - calling find circle
+2020-08-27 20:06:08,625 - DEBUG - approach1.py - __find_circle - start: 30
+2020-08-27 20:06:08,626 - DEBUG - approach1.py - __find_circle - circle: [30]
+2020-08-27 20:06:08,626 - DEBUG - approach1.py - __find_circle - children: []
+2020-08-27 20:06:08,626 - DEBUG - approach1.py - __find_circle - no circle found[]
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_sentence_pair_time0:09:23.578866
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_sentence_pair961
+2020-08-27 20:06:08,626 - INFO - Stats.py - log_results - sentence_pair: 0:00:00.586450
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_single_sentence_time0:18:48.243638
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_single_sentence961
+2020-08-27 20:06:08,626 - INFO - Stats.py - log_results - single_sentence: 0:00:01.174031
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_common_words_time0:00:01.046946
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_common_words961
+2020-08-27 20:06:08,626 - INFO - Stats.py - log_results - common_words: 0:00:00.001089
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_statistics_time0:00:02.670550
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_statistics961
+2020-08-27 20:06:08,626 - INFO - Stats.py - log_results - statistics: 0:00:00.002779
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_edit_time0:00:07.980318
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_edit961
+2020-08-27 20:06:08,626 - INFO - Stats.py - log_results - edit: 0:00:00.008304
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_jaro_time0:00:00.540151
+2020-08-27 20:06:08,626 - DEBUG - Stats.py - log_results - h_jaro961
+2020-08-27 20:06:08,627 - INFO - Stats.py - log_results - jaro: 0:00:00.000562
+2020-08-27 20:06:08,627 - DEBUG - Stats.py - log_results - h_jaro_winkler_time0:00:00.528174
+2020-08-27 20:06:08,627 - DEBUG - Stats.py - log_results - h_jaro_winkler961
+2020-08-27 20:06:08,627 - INFO - Stats.py - log_results - jaro_winkler: 0:00:00.000550
+2020-08-27 20:06:08,627 - DEBUG - Stats.py - log_results - h_sklearn_time0:00:02.114429
+2020-08-27 20:06:08,627 - DEBUG - Stats.py - log_results - h_sklearn961
+2020-08-27 20:06:08,627 - INFO - Stats.py - log_results - sklearn: 0:00:00.002200
+2020-08-27 20:06:08,627 - DEBUG - Stats.py - log_results - h_approach1_time0:00:00
+2020-08-27 20:06:08,627 - DEBUG - Stats.py - log_results - h_approach2_time0:00:00
+2020-08-27 20:06:08,627 - INFO - ontology.py - write_owl - writing owl file
+2020-08-27 20:06:08,630 - INFO - ontology.py - write_readable - writing readable file

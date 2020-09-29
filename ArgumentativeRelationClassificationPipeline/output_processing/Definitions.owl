@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<!-- The below part of the file was provided by Niklas Rach, the original definitions were created by Saskia Langhammer -->
+
+<rdf:RDF xmlns="http://www.semanticweb.org/schindler/ontologies/DebatingOntology#"
+     xml:base="http://www.semanticweb.org/schindler/ontologies/DebatingOntology"
+     xmlns:Debate="http://www.semanticweb.org/schindler/ontologies/Debate#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/schindler/ontologies/DebatingOntology">
+        <rdfs:comment>This ontology is meant to contain debates, broken down into their argument components (MajorClaim, Claims, Premises) and argument relations (attack, support), to be used by Argumentative Dialogue Systems.</rdfs:comment>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#attacks -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#attacks">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isAttackedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#isAttackedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#isAttackedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#isSupportedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#isSupportedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#supports"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#supports -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#supports">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#targets -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#targets">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#hasKeywords -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#hasKeywords">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#hasText"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#hasText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#hasText">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#database -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#database">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#hasKeywords"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#hasText"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#Claim -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Claim">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#MajorClaim"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:comment>A Claim targets the MajorClaim and is targeted by one or more Premises.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#MajorClaim -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#MajorClaim">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Claim"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:comment>In addition to being targeted by at least one Claim, a MajorClaim may also be targeted by one or more Premises.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#Premise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Premise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Premise can target a Claim, another Premise or the MajorClaim. A Premise may additionally also be targeted by one or more Premises.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+ <!-- The above part of the file was provided by Niklas Rach, the original definitions were created by Saskia Langhammer -->

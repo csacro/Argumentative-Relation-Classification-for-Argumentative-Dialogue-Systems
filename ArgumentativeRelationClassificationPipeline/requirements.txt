@@ -1,0 +1,10 @@
+requests~=2.24.0
+numpy~=1.18.4
+cvxpy~=1.0.31
+cvxopt~=1.2.5
+simplerepresentations~=0.0.4
+scipy~=1.4.1
+simpletransformers~=0.27.1
+transformers==2.10.0
+joblib~=0.14.1
+validators~=0.15.0

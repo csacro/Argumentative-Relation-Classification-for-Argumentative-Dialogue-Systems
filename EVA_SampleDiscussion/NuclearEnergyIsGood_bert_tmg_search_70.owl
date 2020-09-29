@@ -1,0 +1,873 @@
+<?xml version="1.0"?>
+<!-- The below part of the file was provided by Niklas Rach -->
+
+<rdf:RDF xmlns="http://www.semanticweb.org/schindler/ontologies/DebatingOntology#"
+     xml:base="http://www.semanticweb.org/schindler/ontologies/DebatingOntology"
+     xmlns:Debate="http://www.semanticweb.org/schindler/ontologies/Debate#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/schindler/ontologies/DebatingOntology">
+        <rdfs:comment>This ontology is meant to contain debates, broken down into their argument components (MajorClaim, Claims, Premises) and argument relations (attack, support), to be used by Argumentative Dialogue Systems.</rdfs:comment>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#attacks -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#attacks">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isAttackedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#isAttackedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#isAttackedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#isSupportedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#isSupportedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#supports"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#supports -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#supports">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#targets -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#targets">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#hasKeywords -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#hasKeywords">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#hasText"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#hasText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#hasText">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#database -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#database">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#hasKeywords"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#hasText"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#Claim -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Claim">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#MajorClaim"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:comment>A Claim targets the MajorClaim and is targeted by one or more Premises.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#MajorClaim -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#MajorClaim">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#isTargetedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Claim"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:comment>In addition to being targeted by at least one Claim, a MajorClaim may also be targeted by one or more Premises.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/schindler/ontologies/Debate#Premise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Premise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#targets"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#ArgumentComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Premise can target a Claim, another Premise or the MajorClaim. A Premise may additionally also be targeted by one or more Premises.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+ <!-- The above part of the file was provided by Niklas Rach -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#MajorClaim"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclear energy is good</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There are many benefits in acquiring nuclear energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_65"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Many people in the US and all over the world live nuclear power plants without any problems.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_38"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There are several benefits to using nuclear energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_62"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2. Energy efficiency equipment, appliances, buildings and vehicles, and goods and services that improve the energy efficiency of buildings and the efficiency of energy storage and distribution.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_22"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We're investing in innovative technologies so we can build the next generation of safe, clean nuclear power plants.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">One way our energy policy can provide a solid foundation for economic growth is by supporting increased development of nuclear energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_22"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">And, of course, it's the energy-the clean energy-that helps cut the carbon pollution that contributes to climate change.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_3"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear technology helps make our food safe.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_9">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_13"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Georgia residents whose power comes from the new reactors could realize up to $20 in savings on each utility bill by 2034.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_22"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear power plants serve as "economic engines for the communities where they are located" and can help the state comply with the EPA's Clean Power Plan, she writes.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_11">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Professional essay writersOne of the main benefits of nuclear energy is that nuclear energy is one of the clean ways to produce energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_32"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive uses of nuclear energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_13">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Claim"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_0"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These next-generation reactors will power scores of businesses and homes -1.6 million in Georgia alone - and it will do so affordably and reliably.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_14">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear energy can be used in the nuclear weapons production and proliferation.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_15">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_65"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I think this activity help reduce the fear of nuclear power by increasing the students knowledge and understanding.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_16">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear energy is one of the world's leading energy resources.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_17">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_70"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It contributes to maintaining and improving the health of Canadians by investigating and managing the risks from natural and artificial sources of radiation.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_18">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_70"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There are also many backup systems that prevent radiation release; if one fails another takes over.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_19">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_3"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As a leader in nuclear energy, you've shown the progress and prosperity that can be achieved when nations embrace peaceful nuclear energy and reject the development of nuclear arms.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_20">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_3"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear energy provides electricity needs.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_21">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_11"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It's used as a source for nuclear power generation.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_22">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_32"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear plants generate safe and emissions-free energy, said Christine Todd Whitman, former Environmental Protection Agency administrator and co-chairwoman of the Clean and Safe Energy Coalition.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_23">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_11"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unlike coal and oil burning plants, nuclear energy production is environment friendly as burning of coal and oil may pollute the air.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_24">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_42"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">However there are new power plant designs which promise to shorten this time and reduce the expense.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_25">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The nuclear energy that has been produced in the last fifty years has been very safely produced and used.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_26">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_32"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Still, those 104 plants currently generate about one-fifth of the nation's electricity while emitting no greenhouse gases.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_27">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_32"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">On the other hand, nuclear power is proven that there is available technology capable of producing vast quantities of safe and affordable ebergy with zero-carbon emissions.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_28">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear energy can be used to make electricity.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_29">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_10"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Investing in new nuclear power plants is good for the economy, good for the environment and good for energy security.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_30">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_62"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It would be more worthwhile to invest in renewable sources of energy such as wind or solar.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_31">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear energy has a very good safety record and hundreds of nuclear power plants all over the world have operated for more than fifty years without any serious accidents.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_32">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_3"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the process of producing nuclear energy there is no poisonous gases released to the environment such as ozone, carbon dioxide, chlorofluorocarbon and methane during nuclear reaction.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_33">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_32"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Under the Energy Policy Act of 2005, nuclear power is eligible for loan guarantees since it is considered a "clean" technology that doesn't emit carbon gases.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_34">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_39"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Other than that, a single nuclear power plant can generate a large amount of energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_35">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_48"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It's the high-tech medicine that treats cancer and finds new cures.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_36">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_30"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wind and Solar are too expensive and unreliable.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_37">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is cannot be reliable to produce nuclear energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_38">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_39"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A: The risk of using nuclear energy comes from the possibility that radioactive elements might be released into the environment.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_39">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nuclear energy is not a very good source of energy in my opinion because of all the drawbacks.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_40">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_60"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">However, applications of it in wrong method may be harmful to mankind and environment.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_41">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_64"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Although it is new sources to improve growth of economic in a country like Thailand, but it will bring many ill effects to the world such as pollution.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_42">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_12"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The developing of nuclear power plant also not really feasible as around 15 to 20 years is needed to develop only single power plant.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_43">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_39"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The main disadvantages of nuclear power plant are the expulsion of the atomic radiation.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_44">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_31"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The most recent disaster has convinced the Germans that nuclear power is dangerous and has begun shutting down all of their nuclear power plants (Power ranges, 2012).</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_45">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Claim"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_0"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I feel this form of energy is not a very good source of energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_46">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_51"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This will result in a negative effect on public health.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_47">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_70"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sometimes the plant leaks these radioactive wastes into the environment because damage.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_48">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_47"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If a person unhaled these unregulated isotopes, it iwll damage the body's organ and cause genetic disease like lung cancer.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_49">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_1"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The initial cost are high and not all locations in the US could benefit.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_50">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_66"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clearly, rushing an inadequately tested plant into operation, as was done at Three Mile island, is not good.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_51">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_41"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"It will results that public health affected negatively."</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_52">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_3"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We should recall that the development of nuclear energy resulted from development of the most destructive weapons the world has ever known.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_53">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_64"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It's not a reliable source and will not be around for very much longer.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_54">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_39"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">They also make the locations of nuclear power plant as a target area to disrupt the power supply as it can cause a large-scale devastation.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_55">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_11"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">First and foremost, nuclear energy is not claimed as clean energy and there is difficuly of waste disposal for nuclear power.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_56">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_3"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switching to nuclear energy is not a safe option to everyone as it will brings danger in life.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_57">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_50"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A decade ago, objections from environmentalists were the principal roadblocks to new plant construction.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_58">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_46"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It will results that public health affected negatively.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_59">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_32"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Critics, however, say there is no good solution for the storage of dangerous nuclear waste.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_60">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_64"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">However, it is also may be harmful to the environment and mankind and needs serious attentions to avoid any undesired problems.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_61">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_45"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The public tend to have a negative view of that source of energy.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_62">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_10"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"Americans will need clean, cost-effective energy sources."</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_63">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Another huge drawback is that the supply of uranium is estimated to last only about 30-60 more years (Pros and cons of nuclear power).</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_64">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_59"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What will be around for a long time though is radioactive waste which can be very bad for the environment and people living here in the future.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_65">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Claim"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_0"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In addition many people are not very familiar with the advantages of nuclear power and thus are suspicious of it.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_66">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_64"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The surrounding water is polluted, plants will die, animals can grow 3 eyeballs... it's not good.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_67">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_0"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The second reason is reactors accidents and the threat of weapons proliferation easily occurs.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_68">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_24"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In addition the technology to use these alternatives on a large scale is still not highly developed.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_69">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Claim"/>
+        <Debate:attacks rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_0"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As with other types of energy, nuclear energy also has a few major drawbacks.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_70">
+        <rdf:type rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Premise"/>
+        <Debate:supports rdf:resource="http://www.semanticweb.org/schindler/ontologies/Debate#Argument_43"/>
+        <Debate:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A release of radioactivity from a nuclear plant affects many "innocent" persons.</Debate:hasText>
+        <Debate:database rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclearenergyisgood_bert_approach1_search</Debate:database>
+    </owl:NamedIndividual>
+</rdf:RDF>
