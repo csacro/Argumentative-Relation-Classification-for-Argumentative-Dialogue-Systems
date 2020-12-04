@@ -8,7 +8,8 @@ Please cite my thesis when you use any of the material:
 	title = {Argumentative Relation Classification for Argumentative Dialogue Systems},
 	author = {Carolin Schindler},
 	year = {2020},
-	school = {Institute of Communications Engineering, University of Ulm}
+	school = {Institute of Communications Engineering, University of Ulm},
+	doi = {10.18725/OPARU-33911}
 }
 ```
 
