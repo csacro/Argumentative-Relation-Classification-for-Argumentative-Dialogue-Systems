@@ -1,0 +1,3 @@
+[submodule "ArgumentativeRelaitonClassificationPipeline"]
+	path = ArgumentativeRelaitonClassificationPipeline
+	url = https://github.com/csacro/From-Argument-Search-to-Argumentative-Dialogue.git
