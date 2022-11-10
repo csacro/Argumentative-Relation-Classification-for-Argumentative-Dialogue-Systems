@@ -58,7 +58,7 @@ def model_with_simpletransformers(train_df, eval_df, filename: str):
         #"use_multiprocessing": True,
 
         "wandb_project": "RelationModel",
-        #"wandb_kwargs": {},
+        "wandb_kwargs": {"mode": "offline"},
 
         #"use_early_stopping": False,
         #"early_stopping_consider_epochs": False,

@@ -148,18 +148,18 @@ def nltk_pos_counting(parent: str, child: str):
     numerical_diff = 0
     modal_diff = 0
     for (word, tag) in parent_pos:
-        if tag is '.':
+        if tag == '.':
             punctuation_diff += 1
-        elif tag is 'NUM':
+        elif tag == 'NUM':
             numerical_diff += 1
-        elif tag is 'MOD':
+        elif tag == 'MOD':
             modal_diff += 1
     for (word, tag) in child_pos:
-        if tag is '.':
+        if tag == '.':
             punctuation_diff -= 1
-        elif tag is 'NUM':
+        elif tag == 'NUM':
             numerical_diff -= 1
-        elif tag is 'MOD':
+        elif tag == 'MOD':
             modal_diff -= 1
 
     result = [len_diff, punctuation_diff, numerical_diff, modal_diff]

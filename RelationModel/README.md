@@ -2,6 +2,13 @@
 Here binary Classifiers are trained and evaluated. The Classifier has to decide whether there is a relation
 from one sentence to the other (label: 1) or not (label: 0).
 
+In case ``simplerepresentations==0.0.5`` is not available, please, install it directly from source via
+```bash
+git clone https://github.com/AliOsm/simplerepresentations
+cd simplerepresentations
+pip install .
+```
+
 ## datasets
 The dataset has the columns Parent, Child and Class. Class is either no relation (n), relation support (s) or relation attack (a).
 The relation holds form Child to Parent, so the data reads: "Child sentence has a n/s/a relation to Parent sentence."  
